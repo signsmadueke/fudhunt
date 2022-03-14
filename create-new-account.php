@@ -1,19 +1,19 @@
 <?php
-require_once 'admin/config/db.php';
+// require_once 'admin/config/db.php';
 
-if (isset($_POST['submit'])) {
-    $response = register($_POST);
-    if ($response === true) {
-        echo "<script>alert('Registration was successful! Redirecting to login...')</script>";
-        header("refresh:1; url=login");
-    } else if (is_array($response)) {
-        foreach ($response as $err) {
-            echo "<script>alert('$err')</script>";
-        }
-    } else {
-        echo "<script>alert('$response')</script>"; 
-    }
-}
+// if (isset($_POST['submit'])) {
+//     $response = register($_POST);
+//     if ($response === true) {
+//         echo "<script>alert('Registration was successful! Redirecting to login...')</script>";
+//         header("refresh:1; url=login");
+//     } else if (is_array($response)) {
+//         foreach ($response as $err) {
+//             echo "<script>alert('$err')</script>";
+//         }
+//     } else {
+//         echo "<script>alert('$response')</script>"; 
+//     }
+// }
 
 ?>
 

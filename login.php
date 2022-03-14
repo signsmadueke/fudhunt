@@ -1,19 +1,19 @@
 <?php
-require_once 'admin/config/db.php';
+// require_once 'admin/config/db.php';
 
-if (isset($_POST['signin'])) {
-    $response = loginUser($_POST);
-    if ($response === true) {
-        echo "<script>alert('Login was successful! Redirecting...')</script>";
-        header("refresh:1; url=discover");
-    } else if (is_array($response)) {
-        foreach ($response as $err) {
-            echo "<script>alert('$err')</script>";
-        }
-    } else {
-        echo "<script>alert('$response')</script>"; 
-    }
-}
+// if (isset($_POST['signin'])) {
+//     $response = loginUser($_POST);
+//     if ($response === true) {
+//         echo "<script>alert('Login was successful! Redirecting...')</script>";
+//         header("refresh:1; url=discover");
+//     } else if (is_array($response)) {
+//         foreach ($response as $err) {
+//             echo "<script>alert('$err')</script>";
+//         }
+//     } else {
+//         echo "<script>alert('$response')</script>"; 
+//     }
+// }
 
 ?>
 
@@ -42,7 +42,7 @@ if (isset($_POST['signin'])) {
     </section>
 
     <section id="login-form" class="constrain">
-        <form action="" method="POST">
+        <form action="discover" method="POST">
             
             <!-- This is the error text, it displays form errors. -->
             <p class="error">Oh no! Your account or password is incorrect, please check again.</p>
