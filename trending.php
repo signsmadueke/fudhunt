@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta name="author" content="Fudhunt">
-	<meta name="description" content="Bookmarks">
+	<meta name="description" content="Trending">
 	<meta name="robots" content="index, follow">
 
 	<!-- Stylesheets -->
@@ -13,17 +13,17 @@
 	<link rel="stylesheet" href="assets/css/styles.css" />
 	<link rel="stylesheet" href="assets/css/flickity.css">
 
-	<title>Bookmarks</title>
+	<title>Trending</title>
 </head>
 
 <!-- 
-	I have two pages in one. They're fixed into tabs and they become active when the tab's button is clicked.
+	I have many pages in one. They're fixed into tabs and they become active when the tab's button is clicked.
  -->
 
-<body id="bookmarks-page" class="container with-bottom-menu bg-offwhite">
+<body id="nearby-page" class="container with-bottom-menu bg-offwhite">
 	<section id="header" class="header-primary header-with-tab">
 		<div class="text constrain">
-			<h1 class="name">Bookmarks</h1>
+			<h1 class="name">Trending</h1>
 		</div>
 
 		<!-- 
@@ -34,9 +34,10 @@
 		<div id="tabs" class="constrain">
 			<button class="tab active" onclick="openTab(event, 'foods')"><span>Foods</span></button>
 			<button class="tab" onclick="openTab(event, 'restaurants')"><span>Restaurants</span></button>
+			<button class="tab" onclick="openTab(event, 'cuisines')"><span>Cuisines</span></button>
 		</div>
 	</section>
-	
+
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
@@ -45,7 +46,7 @@
 				<span>Home</span>
 			</a>
 
-			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary active">
 				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
 				<span>Trending</span>
 			</a>
@@ -54,7 +55,7 @@
 				<img class="svg" src="assets/images/icons/menu/cart.svg" height="20px" width="20px" alt="Cart">
 			</a>
 
-			<a href="orders" style="padding: 20px 10px;" class="link link-secondary active">
+			<a href="orders" style="padding: 20px 10px;" class="link link-secondary">
 				<img class="svg" src="assets/images/icons/menu/orders.svg" height="20px" alt="Orders">
 				<span>Orders</span>
 			</a>
@@ -68,18 +69,18 @@
 
 	<!-- Tab content -->
 	<!-- This is the Foods tab -->
-	<section id="foods" class="tab-content category active">
+	<section id="foods" class="tab-content nearby-businesses active">
 		<div class="foods constrain">
-			<div class="product horizontal bookmarked">
-				<div class="image">
+			<div class="product horizontal">
+				<a href="#" class="image">
 					<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-				</div>
+				</a>
 
 				<div class="details">
 
-					<div class="name">
+					<a href="#" class="name">
 						<h5>Margherita Burrata</h5>
-					</div>
+					</a>
 
 					<button class="btn bookmark">
 						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
@@ -96,15 +97,15 @@
 			</div>
 
 			<div class="product horizontal bookmarked">
-				<div class="image">
+				<a href="#" class="image">
 					<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-				</div>
+				</a>
 
 				<div class="details">
 
-					<div class="name">
+					<a href="#" class="name">
 						<h5>Burrata Pizza</h5>
-					</div>
+					</a>
 
 					<button class="btn bookmark">
 						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
@@ -124,7 +125,7 @@
 
 	<!-- Tab content -->
 	<!-- This is the Restaurants tab -->
-	<section id="restaurants" class="tab-content category">
+	<section id="restaurants" class="tab-content nearby-businesses">
 		<div class="businesses constrain">
 			<div class="business bookmarked">
 				<a href="business-details" class="image">
@@ -154,7 +155,7 @@
 				</div>
 			</div>
 
-			<div class="business bookmarked">
+			<div class="business">
 				<a href="business-details" class="image">
 					<img src="assets/images/restaurants/kichi.png" height="85px" alt="kichi">
 				</a>
@@ -180,6 +181,103 @@
 						
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tab content -->
+	<!-- This is the Cuisines tab -->
+	<section id="cuisines" class="tab-content nearby-businesses">
+		<div class="businesses constrain">
+		<div class="cuisines ">
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/chad.jpeg" height="50px" alt="All">
+					</div>
+					<h5 class="name">Chad</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/japanese.jpeg" height="50px" alt="Food">
+					</div>
+					<h5 class="name">Japanese</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/indian.jpeg" height="50px" alt="Fashion">
+					</div>
+					<h5 class="name">Indian</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/vietnamese.jpeg" height="50px" alt="Beauty">
+					</div>
+					<h5 class="name">Vietnamese</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/south-korean.jpeg" height="50px" alt="Cake">
+					</div>
+					<h5 class="name">South Korean</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/israeli.jpeg" height="50px" alt="Food">
+					</div>
+					<h5 class="name">Israeli</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/greek.jpeg" height="50px" alt="Fashion">
+					</div>
+					<h5 class="name">Greek</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/swedish.jpeg" height="50px" alt="Fashion">
+					</div>
+					<h5 class="name">Swedish</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/thai.jpeg" height="50px" alt="Fashion">
+					</div>
+					<h5 class="name">Thai</h5>
+				</a>
+			</div>
+
+			<div class="cuisine">
+				<a href="cuisine" class="details">
+					<div class="image">
+						<img src="assets/images/cuisines/spanish.jpeg" height="50px" alt="Fashion">
+					</div>
+					<h5 class="name">Spanish</h5>
+				</a>
 			</div>
 		</div>
 	</section>

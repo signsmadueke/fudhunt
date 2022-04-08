@@ -119,7 +119,7 @@
 			</div>
 
 			<div class="form-row">
-				<button type="submit" class="btn btn-primary" name="complete">Complete</button>
+				<button type="submit" class="btn btn-primary">Complete</button>
 			</div>
 		</form>
 	</section>
@@ -127,14 +127,14 @@
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
-			<a href="discover" style="padding: 20px 10px;" class="link link-secondary">
+			<a href="index" style="padding: 20px 10px;" class="link link-secondary">
 				<img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
 				<span>Home</span>
 			</a>
 
-			<a href="nearby" style="padding: 20px 10px;" class="link link-secondary">
-				<img class="svg" src="assets/images/icons/menu/nearby.svg" height="20px" alt="Nearby">
-				<span>Nearby</span>
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
+				<span>Trending</span>
 			</a>
 
 			<a href="cart" style="padding: 15px;" class="link link-secondary">

@@ -25,7 +25,7 @@
 					<input type="search" id="search-input" placeholder="What are you searching for?" value="Shawarma">
 					<button type="submit" class="btn"><img class="svg" src="assets/images/icons/search.svg" height="10px" alt="Search"></button>
 				</form>
-				<a href="discover" style="padding: 20px 10px;" class="btn close-search">
+				<a href="index" style="padding: 20px 10px;" class="btn close-search">
 					<img class="svg" src="assets/images/icons/filter.svg" height="15px" alt="Filter">
 					<p>Exit</p>
 				</a>
@@ -36,14 +36,14 @@
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
-			<a href="discover" style="padding: 20px 10px;" class="link link-secondary active">
+			<a href="index" style="padding: 20px 10px;" class="link link-secondary active">
 				<img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
 				<span>Home</span>
 			</a>
 
-			<a href="nearby" style="padding: 20px 10px;" class="link link-secondary">
-				<img class="svg" src="assets/images/icons/menu/nearby.svg" height="20px" alt="Nearby">
-				<span>Nearby</span>
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
+				<span>Trending</span>
 			</a>
 
 			<a href="cart" style="padding: 15px;" class="link link-secondary">

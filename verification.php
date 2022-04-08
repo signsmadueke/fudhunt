@@ -49,7 +49,7 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="btn btn-primary" name="submit">Next</button>
+                <button type="submit" class="btn btn-primary">Next</button>
             </div>
         </form>
     </section>

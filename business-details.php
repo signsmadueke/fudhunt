@@ -33,7 +33,7 @@
 
 		
 		<div class="header-actions constrain">
-			<a href="discover" class="back link">
+			<a href="index" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
 			</a>
 			<!-- Bookmark icon -->
@@ -71,14 +71,14 @@
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
-			<a href="discover" style="padding: 20px 10px;" class="link link-secondary active">
+			<a href="index" style="padding: 20px 10px;" class="link link-secondary active">
 				<img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
 				<span>Home</span>
 			</a>
 
-			<a href="nearby" style="padding: 20px 10px;" class="link link-secondary">
-				<img class="svg" src="assets/images/icons/menu/nearby.svg" height="20px" alt="Nearby">
-				<span>Nearby</span>
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
+				<span>Trending</span>
 			</a>
 
 			<a href="cart" style="padding: 15px;" class="link link-secondary">
@@ -116,144 +116,157 @@
 				<!-- 
 					There's a ".bookmarked" class on the products that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon on top of the product image.
 				-->
-				<div class="product bookmarked">
+				<div class="product vertical bookmarked">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/1.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Hot Salami Pizza</a>
+							<p class="name">Hot Salami Pizza</p>
 							<p>
 								<span class="price">$2.99</span>
-
-								<!-- Clicking the button below brings up the Add to Cart popup. -->
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
+							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="product">
+				<div class="product vertical">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/2.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Dungeness Crab Arancini</a>
+							<p class="name">Dungeness Crab Arancini</p>
 							<p>
 								<span class="price">$3.99</span>
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
 							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="product bookmarked">
+				<div class="product vertical bookmarked">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Octopus</a>
+							<p class="name">Octopus</p>
 							<p>
 								<span class="price">$4.99</span>
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
 							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="product bookmarked">
+				<div class="product vertical bookmarked">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Roasted Beet Salad</a>
+							<p class="name">Roasted Beet Salad</p>
 							<p>
 								<span class="price">$6.99</span>
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
 							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="product">
+				<div class="product vertical">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/5.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Fried Cauliflower</a>
+							<p class="name">Fried Cauliflower</p>
 							<p>
 								<span class="price">$3.99</span>
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
 							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="product">
+				<div class="product vertical">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/6.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Carbonara Pizza</a>
+							<p class="name">Carbonara Pizza</p>
 							<p>
 								<span class="price">$5.99</span>
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
 							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="product bookmarked">
+				<div class="product vertical bookmarked">
 					<div class="details">
-						<a href="#" class="image">
+						<div class="image">
 							<img src="assets/images/products/1.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 							<button class="btn bookmark">
 								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 							</button>
-						</a>
+						</div>
 						<div class="text">
-							<a href="#" class="name">Margherita Pizza</a>
+							<p class="name">Margherita Pizza</p>
 							<p>
 								<span class="price">$3.99</span>
-								<button class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
 							</p>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -269,50 +282,52 @@
 				There's a ".bookmarked" class on the products that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon.
 			-->
 			<div class="v-grid">
-				<div class="product constrain">
-					<a href="#" class="image">
+				<div class="product horizontal constrain">
+					<div class="image">
 						<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-					</a>
+					</div>
 
 					<div class="details">
 
-						<a href="#" class="name">
+						<div class="name">
 							<h5>Margherita Burrata</h5>
-						</a>
+						</div>
 
 						<button class="btn bookmark">
 							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 						</button>
 
 						<h5 class="price">$1,300</h5>
-
-						<button class="btn add-to-cart">
-							<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-						</button>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 
 					</div>
 				</div>
 
-				<div class="product constrain bookmarked">
-					<a href="#" class="image">
+				<div class="product horizontal constrain bookmarked">
+					<div class="image">
 						<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-					</a>
+					</div>
 
 					<div class="details">
 
-						<a href="#" class="name">
+						<div class="name">
 							<h5>Burrata Pizza</h5>
-						</a>
+						</div>
 
 						<button class="btn bookmark">
 							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 						</button>
 
 						<h5 class="price">$1,300</h5>
-
-						<button class="btn add-to-cart">
-							<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-						</button>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 
 					</div>
 				</div>
@@ -325,50 +340,52 @@
 			</div>
 
 			<div class="v-grid">
-				<div class="product constrain bookmarked">
-					<a href="#" class="image">
+				<div class="product horizontal constrain bookmarked">
+					<div class="image">
 						<img src="assets/images/products/9.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-					</a>
+					</div>
 
 					<div class="details">
 
-						<a href="#" class="name">
+						<div class="name">
 							<h5>Squid Ink Risotto</h5>
-						</a>
+						</div>
 
 						<button class="btn bookmark">
 							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 						</button>
 
 						<h5 class="price">$350</h5>
-
-						<button class="btn add-to-cart">
-							<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-						</button>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 
 					</div>
 				</div>
 
-				<div class="product constrain">
-					<a href="#" class="image">
+				<div class="product horizontal constrain">
+					<div class="image">
 						<img src="assets/images/products/8.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-					</a>
+					</div>
 
 					<div class="details">
 
-						<a href="#" class="name">
+						<div class="name">
 							<h5>Funghi Misti Pizza</h5>
-						</a>
+						</div>
 
 						<button class="btn bookmark">
 							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 						</button>
 
 						<h5 class="price">$450</h5>
-
-						<button class="btn add-to-cart">
-							<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-						</button>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 
 					</div>
 				</div>
@@ -380,88 +397,53 @@
 	<!-- Tab content -->
 	<!-- This is the Reviews tab -->
 	<section id="reviews" class="tab-content constrain">
-
-		<div class="section-title with-link">
-			<h4>Photos & Videos</h4>
-			<a href="#" class="link link-primary">
-				<span>View all</span>
-				<img class="svg" src="assets/images/icons/double-chevron-right.svg" height="7px" alt="Arrow Right">
-			</a>
-		</div>
 		
-		<!-- These are the photos from ratings. -->
-		<div class="review-media">
-			<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-			<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-			<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-			<a href="#" class="media"><img src="assets/images/products/17.jpg" height="70px" alt="Review Media"></a>
-			<a href="#" class="media"><img src="assets/images/products/18.jpg" height="70px" alt="Review Media"></a>
-		</div>
-
-		<!-- Star Ratings -->
-		<div class="star-ratings">
-			<h4>Rate</h4>
-			<div class="ratings">
-				<div class="rating star-5">
-					<!-- This is the number of reviews with 5 stars -->
-					<span>99+</span>
-					<div class="stars">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-					</div>
-				</div>
-				
-				<div class="rating star-4">
-					<span>56</span>
-					<div class="stars">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-					</div>
-				</div>
-				
-				<div class="rating star-3">
-					<span>45</span>
-					<div class="stars">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-					</div>
-				</div>
-				
-				<div class="rating star-2">
-					<span>12</span>
-					<div class="stars">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-					</div>
-				</div>
-			
-				<div class="rating star-1">
-					<span>5</span>
-					<div class="stars">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-						<img class="svg" src="assets/images/icons/star.svg" height="12px" alt="Star">
-					</div>
-				</div>
+		<form action="business-details" class="rate-restaurant">
+			<div class="text">
+				<h4>Rate this restaurant</h4>
+				<p>Your feedback will help us improve shipping experience better.</p>
 			</div>
-		</div>
+			<div class="rating-stars">
+				<label>
+					<input id="rating-radio" type="radio" name="stars" value="1" />
+					<span class="icon">★</span>
+				</label>
+				<label>
+					<input id="rating-radio" type="radio" name="stars" value="2" />
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+				</label>
+				<label>
+					<input id="rating-radio" type="radio" name="stars" value="3" />
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+				</label>
+				<label>
+					<input id="rating-radio" type="radio" name="stars" value="4" />
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+				</label>
+				<label>
+					<input id="rating-radio" type="radio" name="stars" value="5" />
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+					<span class="icon">★</span>
+				</label>
+			</div>
+			<textarea name="note" placeholder="Write a comment" id="note"></textarea>
+			<button type="submit" class="btn btn-primary">Submit Review</button>
+		</form>
 
 		<!-- Ratings -->
 		<div class="comments">
+			<div class="section-title">
+				<h4>Reviews <span>(4)</span></h4>
+			</div>
 
 			<!-- This is a rating with just the star rating -->
 			<div class="comment">
@@ -490,11 +472,11 @@
 					<div class="stars" style="--rating: 5;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">Matcha milk tea very yummy! I like it. Matcha milk tea very yummy! I like it. Matcha milk tea very yummy! I like it.</p>
-					<div class="comment-media">
+					<!-- <div class="comment-media">
 						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
 						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
 						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -520,11 +502,11 @@
 					<h5 class="name">Princess Adeleke</h5>
 					<div class="stars" style="--rating: 4;" aria-label="Rating of this product is 4 out of 5."></div>
 					<p class="date">Yesterday</p>
-					<div class="comment-media">
+					<!-- <div class="comment-media">
 						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
 						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
 						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

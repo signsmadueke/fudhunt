@@ -19,7 +19,7 @@
 <body id="rating-page" class="container bg-offwhite">
 <section id="header" class="header-primary">
 		<div class="header-actions constrain">
-			<a href="discover" class="back link">
+			<a href="index" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
 			</a>
 		</div>
@@ -28,9 +28,8 @@
 	</section>
 
 	<section id="rating">
-		<form action="discover">
+		<form action="index">
 			<div class="rating restaurant constrain">
-				<h4 class="rating-type">Restaurant</h4>
 				<div class="rating-info">
 					<!-- 
 						There's a ".bookmarked" class on the restaurants that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon.
@@ -54,46 +53,50 @@
 						</div>
 					</div>
 
-					<div class="rating-process">
-						<h5>What do you think about this restaurant?</h5>
-						<p>Your feedback will help us improve restaurants experience better.</p>
-						<textarea name="review" placeholder="Leave a review" id="note"></textarea>
-					</div>
-				</div>
-			</div>
-
-			<div class="rating food constrain">
-				<h4 class="rating-type">Food</h4>
-				<div class="rating-info">
-					<div class="food">
-						<a href="#" class="image">
-							<img src="assets/images/products/12.jpg" height="100px" alt="Restaurant Image">
-						</a>
-						<a href="#">
-							<h4 class="name">Fried Yam Chips</h4>
-						</a>
-						<div class="reaction">
-							<!-- This is the thumbs up and down radio -->
-							<div class="reaction-radio">
-								<input name="reaction" id="thumb-up" type="radio">
-								<label for="thumb-up">
-									<img class="svg" src="assets/images/icons/thumb-up.svg" height="20px" alt="Thumb up">
-								</label>
-							</div>
-
-							<div class="reaction-radio">
-								<input name="reaction" id="thumb-down" type="radio">
-								<label for="thumb-down">
-									<img class="svg" src="assets/images/icons/thumb-down.svg" height="20px" alt="Thumb down">
-								</label>
-							</div>
+					<div class="rate-restaurant">
+						<div class="text">
+							<h4>Rate this restaurant</h4>
+							<p>Your feedback will help us improve shipping experience better.</p>
 						</div>
+						<div class="rating-stars">
+							<label>
+								<input id="rating-radio" type="radio" name="stars" value="1" />
+								<span class="icon">★</span>
+							</label>
+							<label>
+								<input id="rating-radio" type="radio" name="stars" value="2" />
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+							</label>
+							<label>
+								<input id="rating-radio" type="radio" name="stars" value="3" />
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+							</label>
+							<label>
+								<input id="rating-radio" type="radio" name="stars" value="4" />
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+							</label>
+							<label>
+								<input id="rating-radio" type="radio" name="stars" value="5" />
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+								<span class="icon">★</span>
+							</label>
+						</div>
+						<textarea name="note" placeholder="Write a comment" id="note"></textarea>
 					</div>
 				</div>
 			</div>
 
 			<div class="submit constrain">
-				<button type="submit" class="btn btn-primary" name="complete">Complete</button>
+				<button type="submit" class="btn btn-primary">Submit Review</button>
 			</div>
 		</form>
 	</section>

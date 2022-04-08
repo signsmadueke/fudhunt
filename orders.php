@@ -40,14 +40,14 @@
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
-			<a href="discover" style="padding: 20px 10px;" class="link link-secondary">
+			<a href="index" style="padding: 20px 10px;" class="link link-secondary">
 				<img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
 				<span>Home</span>
 			</a>
 
-			<a href="nearby" style="padding: 20px 10px;" class="link link-secondary">
-				<img class="svg" src="assets/images/icons/menu/nearby.svg" height="20px" alt="Nearby">
-				<span>Nearby</span>
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
+				<span>Trending</span>
 			</a>
 
 			<a href="cart" style="padding: 15px;" class="link link-secondary">
@@ -160,10 +160,10 @@
 
 			<div class="text">
 				<h2>Ongoing is Empty</h2>
-				<p>You can go to Discover to add products.</p>
+				<p>You can go to Home to add products.</p>
 			</div>
 
-			<a href="discover" class="btn btn-primary">Go Discover</a>
+			<a href="index" class="btn btn-primary">Go Home</a>
 		</div>
 	</section>
 
@@ -256,10 +256,10 @@
 
 			<div class="text">
 				<h2>History is Empty</h2>
-				<p>You can go to Discover to add products.</p>
+				<p>You can go to Home to add products.</p>
 			</div>
 
-			<a href="discover" class="btn btn-primary">Go Discover</a>
+			<a href="index" class="btn btn-primary">Go Home</a>
 		</div>
 	</section>
 
@@ -354,10 +354,10 @@
 
 			<div class="text">
 				<h2>History is Empty</h2>
-				<p>You can go to Discover to add products.</p>
+				<p>You can go to Home to add products.</p>
 			</div>
 
-			<a href="discover" class="btn btn-primary">Go Discover</a>
+			<a href="index" class="btn btn-primary">Go Home</a>
 		</div>
 	</section>
 

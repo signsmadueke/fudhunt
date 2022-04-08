@@ -90,7 +90,7 @@ $('body.with-bottom-menu').css({
 
 
 
-// // This adds a margin bottom to the .search-suggestions in the Discover page so it doesn't don't go underneath the bottom menu.
+// // This adds a margin bottom to the .search-suggestions in the Home page so it doesn't don't go underneath the bottom menu.
 // Starts here
 $('body.with-bottom-menu .search-sugestions').css({
     'margin-bottom': $('#bottom-menu').height() + "px"

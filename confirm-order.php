@@ -124,153 +124,172 @@
 		</section>
 
 		<!-- Flickity Slider of Similar products -->
-		<section id="similar-products">
-			<div class="section-title constrain">
+		<section id="similar-products" class="constrain">
+			<div class="section-title">
 				<h4>Similar Products</h4>
 			</div>
 
 			<div class="products constrain"
-				data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "0", "LazyLoad": false }'>
-				<div class="product bookmarked">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/1.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
-								</button>
-							</p>
-						</div>
-					</div>
-				</div>
+					data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "0", "LazyLoad": false }'>
 
-				<div class="product">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/2.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
+					<!-- 
+						There's a ".bookmarked" class on the products that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon on top of the product image.
+					-->
+					<div class="product vertical bookmarked">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/1.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
-							</p>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Hot Salami Pizza</a>
+								<p>
+									<span class="price">$2.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="product bookmarked">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
+					<div class="product vertical">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/2.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
-							</p>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Dungeness Crab Arancini</a>
+								<p>
+									<span class="price">$3.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="product bookmarked">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
+					<div class="product vertical bookmarked">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
-							</p>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Octopus</a>
+								<p>
+									<span class="price">$4.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="product">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/5.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
+					<div class="product vertical bookmarked">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
-							</p>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Roasted Beet Salad</a>
+								<p>
+									<span class="price">$6.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="product">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/6.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
+					<div class="product vertical">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/5.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
-							</p>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Fried Cauliflower</a>
+								<p>
+									<span class="price">$3.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="product bookmarked">
-					<div class="details">
-						<a href="#" class="image">
-							<img src="assets/images/products/1.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-							<button type="button" class="btn bookmark">
-								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-							</button>
-						</a>
-						<div class="text">
-							<a href="#" class="name">Fried Noodles Salad and Chicken Wings</a>
-							<p>
-								<span class="price">$1,500</span>
-								<button type="button" class="btn add-to-cart">
-									<img class="svg" src="assets/images/icons/add.svg" height="18px" alt="Add to Cart">
+					<div class="product vertical">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/6.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
-							</p>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Carbonara Pizza</a>
+								<p>
+									<span class="price">$5.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="product vertical bookmarked">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="assets/images/products/1.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
+								<button class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
+								</button>
+							</a>
+							<div class="text">
+								<a href="#" class="name">Margherita Pizza</a>
+								<p>
+									<span class="price">$3.99</span>
+								</p>
+								<div class="quantity">
+									<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<span class="value">0</span>
+									<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 		</section>
 
 		<!-- Leaving a Note -->

@@ -42,10 +42,10 @@
     </section>
 
     <section id="login-form" class="constrain">
-        <form action="discover" method="POST">
+        <form action="index" method="POST">
             
             <!-- This is the error text, it displays form errors. -->
-            <p class="error">Oh no! Your account or password is incorrect, please check again.</p>
+            <p class="error">Password is incorrect.</p>
             
             <div class="form-row">
                 <div>
@@ -66,7 +66,7 @@
             <div></div>
 
             <div class="form-row">
-                <button type="submit" class="btn btn-secondary" name="signin">Sign In</button>
+                <button type="submit" class="btn btn-primary" name="signin">Sign In</button>
             </div>
 
             <!-- Facebook sign in button

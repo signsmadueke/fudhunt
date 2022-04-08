@@ -35,10 +35,10 @@
 	</section>
 
 	<section id="delivery-address">
-		<div class="addresses constrain">
+		<form action="" class="addresses constrain">
 
 			<!-- This is an address -->
-			<a href="#" class="address">
+			<div class="address">
 				<div class="details">
 					<h5>Home</h5>
 					<h5 class="location-address">
@@ -51,14 +51,17 @@
 					</p>
 					<p class="phone">
 						<img class="svg" src="assets/images/icons/telephone.svg" height="9px" alt="Store">
-						<span>+234 (803) 878 2933</span>
+						<span>+234 907 151 0046</span>
 					</p>
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
+				<label class="radio">
+					<input name="address" type="radio" checked>
+					<span class="check"></span>
+				</label>
+			</div>
 
 			<!-- This is an address -->
-			<a href="#" class="address">
+			<div class="address">
 				<div class="details">
 					<h5>Work</h5>
 					<h5 class="location-address">
@@ -67,33 +70,36 @@
 					</h5>
 					<p class="name">
 						<img class="svg" src="assets/images/icons/person.svg" height="9px" alt="Store">
-						<span>Joy Obianaba</span>
+						<span>Signs Madueke</span>
 					</p>
 					<p class="phone">
 						<img class="svg" src="assets/images/icons/telephone.svg" height="9px" alt="Store">
-						<span>+234 (803) 878 2933</span>
+						<span>+234 907 151 0046</span>
 					</p>
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
+				<label class="radio">
+					<input name="address" type="radio">
+					<span class="check"></span>
+				</label>
+			</div>
 
 			<!-- This is the button that adds a new address -->
 			<a href="add-new-address" class="btn">Add new Address</a>
 			
-		</div>
+		</form>
 	</section>
 
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
-			<a href="discover" style="padding: 20px 10px;" class="link link-secondary">
+			<a href="index" style="padding: 20px 10px;" class="link link-secondary">
 				<img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
 				<span>Home</span>
 			</a>
 
-			<a href="nearby" style="padding: 20px 10px;" class="link link-secondary">
-				<img class="svg" src="assets/images/icons/menu/nearby.svg" height="20px" alt="Nearby">
-				<span>Nearby</span>
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
+				<span>Trending</span>
 			</a>
 
 			<a href="cart" style="padding: 15px;" class="link link-secondary">

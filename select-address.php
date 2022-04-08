@@ -35,7 +35,7 @@
 			<form action="" class="">
 				<input name="address-search" placeholder="Search your address" value="330 15th Eighth Avenue, New York" type="text" />
 
-				<button type="submit" class="btn btn-primary" name="add-address">Add new address</button>
+				<button type="submit" class="btn btn-primary">Add new address</button>
 			</form>
 		</div>
 		<!-- <div class="popup-overlay"></div> -->
@@ -46,14 +46,14 @@
 	<!-- This is that menu at the bottom of every page -->
 	<section id="bottom-menu">
 		<div class="menu-links constrain">
-			<a href="discover" style="padding: 20px 10px;" class="link link-secondary">
+			<a href="index" style="padding: 20px 10px;" class="link link-secondary">
 				<img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
 				<span>Home</span>
 			</a>
 
-			<a href="nearby" style="padding: 20px 10px;" class="link link-secondary">
-				<img class="svg" src="assets/images/icons/menu/nearby.svg" height="20px" alt="Nearby">
-				<span>Nearby</span>
+			<a href="trending" style="padding: 20px 10px;" class="link link-secondary">
+				<img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
+				<span>Trending</span>
 			</a>
 
 			<a href="cart" style="padding: 15px;" class="link link-secondary">

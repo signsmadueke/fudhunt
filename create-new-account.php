@@ -90,7 +90,7 @@
             <div></div>
 
             <div class="form-row">
-                <button type="submit" class="btn btn-primary" name="submit">Continue</button>
+                <button type="submit" class="btn btn-primary">Continue</button>
             </div>
         </form>
     </section>
