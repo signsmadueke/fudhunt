@@ -1359,8 +1359,8 @@ form {
 	.btn {
 		&.btn-primary {
 			color: #ffffff;
-			background: #fa6400;
-			background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%), #FA6400;
+			// background: #fa6400;
+			background: linear-gradient(135deg, rgba(255, 184, 0, 0.5) 10%, rgba(255, 184, 0, 0) 100%), #FA6400;
 		}
 	}
 
@@ -1387,19 +1387,23 @@ form {
 	h3,
 	h4,
 	h5,
-	h6,
-	p {
+	h6 {
 		color: #ffffff !important;
 	}
 
+	p {
+		color: rgba(255, 255, 255, 0.65) !important;
+	}
+
 	.link {
-		color: rgba(255, 255, 255, 0.7) !important;
+		color: rgba(255, 255, 255, 0.9) !important;
 	}
 
 	.error {
-		background-color: rgba(255, 255, 255, 0.15) !important;
+		background-color: rgba(255, 120, 120, 0.15) !important;
 		padding: 5px 10px;
 		border-radius: 5px;
+		color: #ffa7a7 !important;
 	}
 
 	img,
@@ -1548,22 +1552,71 @@ form {
 // CREATE ACCOUNT PAGE
 #create-new-account-page {
 	#header {
-		padding: 50px 30px 15px 30px;
-	}
-
-	#heading-text {
-		padding: 15px 30px;
+		padding-top: 50px;
 		display: grid;
-		grid-gap: 15px;
+		grid-gap: 30px;
+
+		.navigation {
+			padding: 0 15px;
+		}
+
+		.text {
+			display: grid;
+			grid-gap: 10px;
+			grid-auto-flow: row;
+			padding: 0 15px;
+		}
+
+		#tabs {
+			width: 100%;
+			overflow-x: auto;
+			display: grid;
+			grid-auto-flow: column;
+			background-color: transparent;
+			grid-gap: 15px;
+			padding: 0 15px;
+
+			.tab {
+				border: 1.5px solid rgba(255, 255, 255, 0.1);
+				border-radius: 5px;
+
+				span {
+					padding: 15px 25px;
+					display: block;
+					color: #ffffff;
+					opacity: 0.5;
+				}
+
+				&.active {
+					border-color: rgba(255, 255, 255, 0.3);
+					background-color: rgba(255, 255, 255, 0.1);
+
+					span {
+						font-weight: 500;
+						color: #ffffff;
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		.tab-content {
+			&.active {
+				display: grid;
+			}
+		}
 	}
 
-	#create-new-account-form {
-		padding: 15px 30px;
-
-		form {
+	.tab-content {
+		&.active {
 			display: grid;
-			grid-gap: 20px;
 		}
+	}
+
+	#personal,
+	#location {
+		padding: 30px 15px 50px 15px;
+		grid-gap: 20px;
 	}
 }
 
@@ -2040,8 +2093,7 @@ form {
 					max-width: 120px;
 					display: grid;
 					grid-gap: 10px;
-					grid-template-areas:
-						"name"
+					grid-template-areas: "name"
 						"price"
 						"quantity";
 
@@ -2358,8 +2410,7 @@ form {
 					max-width: 120px;
 					display: grid;
 					grid-gap: 10px;
-					grid-template-areas:
-						"name"
+					grid-template-areas: "name"
 						"price"
 						"quantity";
 
@@ -2825,8 +2876,7 @@ form {
 				max-width: 120px;
 				display: grid;
 				grid-gap: 10px;
-				grid-template-areas:
-					"name"
+				grid-template-areas: "name"
 					"price"
 					"quantity";
 
@@ -2967,8 +3017,7 @@ form {
 			grid-gap: 15px;
 			grid-area: details;
 			align-items: center;
-			grid-template-areas:
-				"name bookmark"
+			grid-template-areas: "name bookmark"
 				"price quantity";
 
 			.name {
@@ -4030,8 +4079,7 @@ form {
 					grid-gap: 10px;
 					grid-area: details;
 					align-items: center;
-					grid-template-areas:
-						"name name name name"
+					grid-template-areas: "name name name name"
 						"bag line like ."
 						"price price price quantity";
 
@@ -4199,8 +4247,7 @@ form {
 				align-items: center;
 				width: 100%;
 				padding: 20px 30px;
-				grid-template-areas:
-					"items text"
+				grid-template-areas: "items text"
 					"price text";
 
 				.items {
@@ -7953,8 +8000,7 @@ form {
 				grid-gap: 10px;
 				grid-area: details;
 				align-items: center;
-				grid-template-areas:
-					"name name"
+				grid-template-areas: "name name"
 					"price quantity";
 
 				.name {

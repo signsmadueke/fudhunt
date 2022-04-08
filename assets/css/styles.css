@@ -1475,8 +1475,7 @@ form .error {
 
 .bg-dark .btn.btn-primary {
   color: #ffffff;
-  background: #fa6400;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%), #FA6400;
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.5) 10%, rgba(255, 184, 0, 0) 100%), #FA6400;
 }
 
 .bg-dark select,
@@ -1504,19 +1503,23 @@ form .error {
 .bg-dark h3,
 .bg-dark h4,
 .bg-dark h5,
-.bg-dark h6,
-.bg-dark p {
+.bg-dark h6 {
   color: #ffffff !important;
 }
 
+.bg-dark p {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
 .bg-dark .link {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .bg-dark .error {
-  background-color: rgba(255, 255, 255, 0.15) !important;
+  background-color: rgba(255, 120, 120, 0.15) !important;
   padding: 5px 10px;
   border-radius: 5px;
+  color: #ffa7a7 !important;
 }
 
 .bg-dark img path,
@@ -1654,23 +1657,71 @@ form .error {
 }
 
 #create-new-account-page #header {
-  padding: 50px 30px 15px 30px;
-}
-
-#create-new-account-page #heading-text {
-  padding: 15px 30px;
+  padding-top: 50px;
   display: -ms-grid;
   display: grid;
+  grid-gap: 30px;
+}
+
+#create-new-account-page #header .navigation {
+  padding: 0 15px;
+}
+
+#create-new-account-page #header .text {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: row;
+  padding: 0 15px;
+}
+
+#create-new-account-page #header #tabs {
+  width: 100%;
+  overflow-x: auto;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  background-color: transparent;
   grid-gap: 15px;
+  padding: 0 15px;
 }
 
-#create-new-account-page #create-new-account-form {
-  padding: 15px 30px;
+#create-new-account-page #header #tabs .tab {
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
-#create-new-account-page #create-new-account-form form {
+#create-new-account-page #header #tabs .tab span {
+  padding: 15px 25px;
+  display: block;
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+#create-new-account-page #header #tabs .tab.active {
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#create-new-account-page #header #tabs .tab.active span {
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 1;
+}
+
+#create-new-account-page #header .tab-content.active {
   display: -ms-grid;
   display: grid;
+}
+
+#create-new-account-page .tab-content.active {
+  display: -ms-grid;
+  display: grid;
+}
+
+#create-new-account-page #personal,
+#create-new-account-page #location {
+  padding: 30px 15px 50px 15px;
   grid-gap: 20px;
 }
 

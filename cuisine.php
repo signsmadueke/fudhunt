@@ -28,10 +28,8 @@
 <body id="cuisine-page" class="bg-offwhite container with-bottom-menu bookmarked">
 	
 	<!-- So this <section id="header"> has a backgroud image, I don't know if it's meant to be dynamic but I've left a link to the image in the inline style of the section.  -->
-	<section id="header" class="header-transparent-image"
-		style="background: linear-gradient(0deg, rgba(34, 43, 69, 0.7), rgba(34, 43, 69, 0.7)), url(assets/images/cuisines/japanese.jpeg);">
-
-		
+	<section id="header" class="header-transparent-image" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, rgba(34, 43, 69, 0.9), rgba(34, 43, 69, 0.9)), url(assets/images/cuisines/japanese.jpeg);">
+	
 		<div class="header-actions constrain">
 			<a href="index" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">

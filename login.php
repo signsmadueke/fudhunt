@@ -44,8 +44,6 @@
     <section id="login-form" class="constrain">
         <form action="index" method="POST">
             
-            <!-- This is the error text, it displays form errors. -->
-            <p class="error">Password is incorrect.</p>
             
             <div class="form-row">
                 <div>
@@ -56,6 +54,8 @@
             <div class="form-row">
                 <div>
                     <input type="password" placeholder="Password" name="password">
+                    <!-- This is the error text, it displays form errors. -->
+                    <p class="error">Password is incorrect.</p>
                 </div>
             </div>
 
@@ -68,11 +68,6 @@
             <div class="form-row">
                 <button type="submit" class="btn btn-primary" name="signin">Sign In</button>
             </div>
-
-            <!-- Facebook sign in button
-            <div class="form-row">
-                <a href="#" class="btn btn-facebook">Sign In with Facebook</a>
-            </div> -->
         </form>
     </section>
 
