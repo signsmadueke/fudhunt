@@ -1522,11 +1522,6 @@ form .error {
   color: #ffa7a7 !important;
 }
 
-.bg-dark img path,
-.bg-dark svg path {
-  fill: #ffffff;
-}
-
 .bg-dark form input {
   background-color: rgba(255, 255, 255, 0.05);
   color: #ffffff;

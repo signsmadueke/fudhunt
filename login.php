@@ -38,7 +38,7 @@
 <body id="login-page" class="bg-dark container">
 
     <section id="login-logo" class="constrain">
-        <img class="svg" src="assets/images/logo.svg" height="150px" alt="Fudhunt Logo">
+        <img class="svg logo" src="assets/images/logo.svg" height="150px" alt="Fudhunt Logo">
     </section>
 
     <section id="login-form" class="constrain">
@@ -52,7 +52,7 @@
             </div>
 
             <div class="form-row">
-                <div>
+                <div class="v-grid">
                     <input type="password" placeholder="Password" name="password">
                     <!-- This is the error text, it displays form errors. -->
                     <p class="error">Password is incorrect.</p>
