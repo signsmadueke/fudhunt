@@ -382,6 +382,15 @@ form {
 	grid-auto-flow: row;
 }
 
+input {
+	-webkit-user-select: auto !important;
+	-khtml-user-select: auto !important;
+	-moz-user-select: auto !important;
+	-o-user-select: auto !important;
+	user-select: auto !important;
+	-webkit-user-drag: auto !important;
+}
+
 select,
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
 textarea {
