@@ -101,11 +101,7 @@
 	<section id="products" class="tab-content active">
 		<div class="v-grid">
 			<div class="section-title with-link constrain">
-				<h4>Popular Items</h4>
-				<a href="#" class="link link-primary">
-					<span>View all</span>
-					<img class="svg" src="assets/images/icons/double-chevron-right.svg" height="7px" alt="Arrow Right">
-				</a>
+				<h4>Menu</h4>
 			</div>
 
 			<!-- This is a flickity slider of products by this restaurant -->
