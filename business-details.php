@@ -396,7 +396,7 @@
 		<form action="business-details" class="rate-restaurant">
 			<div class="text">
 				<h4>Rate this restaurant</h4>
-				<p>Your feedback will help us improve shipping experience better.</p>
+				<p>Your feedback will help us improve customer's experience better.</p>
 			</div>
 			<div class="rating-stars">
 				<label>

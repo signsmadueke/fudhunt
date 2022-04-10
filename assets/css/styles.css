@@ -935,7 +935,8 @@ form .form-row {
 }
 
 form .form-row input,
-form .form-row select {
+form .form-row select,
+form .form-row textarea {
   width: 100%;
   display: block;
 }
@@ -1529,6 +1530,10 @@ form .error {
   padding: 5px 10px;
   border-radius: 5px;
   color: #ffa7a7 !important;
+}
+
+.bg-dark #header svg path {
+  fill: #ffffff;
 }
 
 .bg-dark form input {
