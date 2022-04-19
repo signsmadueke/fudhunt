@@ -1,3 +1,33 @@
+<?php
+require 'include/function4user.php';
+if (isset($_SESSION['user_id'])) {
+	 $user_id = $_SESSION['user_id'];  
+  $result = fetch_user($user_id);
+   extract($result);
+
+ // var_dump($result); 
+
+}
+
+
+if (isset($_GET['cuisine_id'])) {
+	 $cuisine_id = $_GET['cuisine_id']; 
+	  $response = fetch_cuisine_food($cuisine_id);
+	  $nc = count($response);
+
+	  $cn = fetch_single_cuisine($cuisine_id);
+	 extract($cn);
+
+}else{
+	header('Location:'.$_SERVER['HTTP_REFERER']);
+	exit();
+
+}
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,8 +68,8 @@
 
 		<!-- This shows the name and address of the restaurant -->
 		<div class="text constrain">
-			<h1 class="name">Japanese</h1>
-			<p>9 Foods </p>
+			<h1 class="name"><?php 	echo $cuisine_name; ?></h1>
+			<p><?php echo $nc; ?> Foods </p>
 		</div>
 	</section>
 
@@ -74,6 +104,14 @@
 
 	<section id="products">
 		<div class="products constrain">
+						<?php 
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+                             // var_dump($row);
+
+                         ?>
+
 			<div class="product horizontal">
 				<div class="image">
 					<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
@@ -99,7 +137,9 @@
 				</div>
 			</div>
 
-			<div class="product horizontal bookmarked">
+		<?php }} ?>
+
+<!-- 			<div class="product horizontal bookmarked">
 				<div class="image">
 					<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
 				</div>
@@ -222,7 +262,9 @@
 					</div>
 
 				</div>
-			</div>
+			</div> -->
+
+
 		</div>
 	</section>
 

@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+require 'include/function4user.php';
+// if (isset($_SESSION['user_id'])) {
+// 	 $user_id = $_SESSION['user_id'];  
+//   $result = fetch_user($user_id);
+//    extract($result);
+
+//  // var_dump($result); 
+
+// }
+
+
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,13 +40,29 @@
 	</section>
 
 	<section id="cart">
+
+		<?php 
+		$cart = $_SESSION['cart'];
+		$prize = [];
+		foreach ($cart as $key ) {
+	$cartsql = "SELECT * FROM food WHERE food_id = $key";
+						$cartres = mysqli_query($link, $cartsql);
+						$cart = mysqli_fetch_assoc($cartres);
+						extract($cart);
+						$food_prize = floatval($food_prize);
+						array_push($prize, $food_prize);
+						// var_dump($cart);
+		
+		// var_dump($_SESSION['cart']);
+		 ?>
+
 		<div class="cart-item constrain">
 			<a href="#" class="image">
-				<img src="assets/images/products/21.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
+				<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="">
 			</a>
 			<div class="details">
-				<a href="#" class="name">Hot Salami Pizza</a>
-				<h5 class="price">$7.99</h5>
+				<a href="#" class="name"><?php echo $food_name; ?></a>
+				<h5 class="price">$<?php $fp = number_format($food_prize); echo $food_prize; ?></h5>
 				<div class="quantity">
 					<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
 					<span class="value">0</span>
@@ -43,7 +71,14 @@
 			</div>
 		</div>
 
-		<div class="cart-item constrain">
+	<?php } 
+
+						$p = array_sum($prize);
+						// var_dump($prize);
+						//var_dump($p);
+		?>
+
+<!-- 		<div class="cart-item constrain">
 			<a href="#" class="image">
 				<img src="assets/images/products/22.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
 			</a>
@@ -56,9 +91,9 @@
 					<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="cart-item constrain">
+		<!-- <div class="cart-item constrain">
 			<a href="#" class="image">
 				<img src="assets/images/products/23.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
 			</a>
@@ -71,14 +106,14 @@
 					<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 
 	<section id="cart-totals">
 		<div class="constrain">
 			<div class="h-grid">
 				<p>Subtotal</p>
-				<p>$26.97</p>
+				<p>$<?php $pf = number_format($p);  echo $pf; ?>.00</p>
 			</div>
 			<div class="h-grid">
 				<p>Shipping Fee</p>
@@ -86,7 +121,7 @@
 			</div>
 			<div class="totals">
 				<h4>Total</h4>
-				<h4>$33.97</h4>
+				<h4>$<?php $pt = $p + 7; $pt = number_format($pt); echo $pt;  ?></h4>
 			</div>
 		</div>
 	</section>

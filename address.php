@@ -1,3 +1,14 @@
+<?php
+require 'include/function4user.php';
+if (isset($_SESSION['user_id'])) {
+	 $user_id = $_SESSION['user_id'];  
+  $result = fetch_user($user_id);
+   extract($result);
+ // var_dump($result); 
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,20 +49,29 @@
 		<form action="" class="addresses constrain">
 
 			<!-- This is an address -->
+
+			  			<?php 
+                        $response = fetch_userAndAddress($user_id);
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row)
+                             //$depature_date = $row['depature_date'];
+                         ?>   
 			<div class="address">
 				<div class="details">
 					<h5>Home</h5>
 					<h5 class="location-address">
 						<img class="svg" src="assets/images/icons/map-pointer.svg" height="9px" alt="Store">
-						<span>76A Gwarimpa Estate, Abuja</span>
+						<span><?php echo $address.", ".$city.", ".$state; ?></span>
 					</h5>
 					<p class="name">
 						<img class="svg" src="assets/images/icons/person.svg" height="9px" alt="Store">
-						<span>Joy Obianaba</span>
+						<span><?php echo $fullname; ?></span>
 					</p>
 					<p class="phone">
 						<img class="svg" src="assets/images/icons/telephone.svg" height="9px" alt="Store">
-						<span>+234 907 151 0046</span>
+						<span><?php echo $phone ?></span>
 					</p>
 				</div>
 				<label class="radio">
@@ -60,8 +80,10 @@
 				</label>
 			</div>
 
+		<?php }} ?>
+
 			<!-- This is an address -->
-			<div class="address">
+			<!-- <div class="address">
 				<div class="details">
 					<h5>Work</h5>
 					<h5 class="location-address">
@@ -81,7 +103,7 @@
 					<input name="address" type="radio">
 					<span class="check"></span>
 				</label>
-			</div>
+			</div> -->
 
 			<!-- This is the button that adds a new address -->
 			<a href="add-new-address" class="btn">Add new Address</a>

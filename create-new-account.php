@@ -1,21 +1,17 @@
 <?php
-// require_once 'admin/config/db.php';
+require 'include/function4user.php';
+if (isset($_POST['submit'])) {
+    $result = register_user($_POST);
 
-// if (isset($_POST['submit'])) {
-//     $response = register($_POST);
-//     if ($response === true) {
-//         echo "<script>alert('Registration was successful! Redirecting to login...')</script>";
-//         header("refresh:1; url=login");
-//     } else if (is_array($response)) {
-//         foreach ($response as $err) {
-//             echo "<script>alert('$err')</script>";
-//         }
-//     } else {
-//         echo "<script>alert('$response')</script>"; 
-//     }
-// }
+  if ($result === true) {
+   header("Location: login.php?reg=true");
+  } else {
+    $errors = $result;
+    extract($errors);
+  }
+}
 
-?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,35 +57,42 @@
     <section id="personal" class="tab-content constrain active">
         <div class="form-row">
             <div>
-                <input type="text" placeholder="Full name" name="name">
+                <input type="text" placeholder="Full name" name="fullname">
+    <?php  if (isset($errors['fullname'])) { ?> <p class="error"><?php echo $errors['fullname']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div>
                 <input type="email" placeholder="Email" name="email">
+ <?php  if (isset($errors['email'])) { ?> <p class="error"><?php echo $errors['email']; ?></p> <?php } ?>
+ <?php  if (isset($errors['emaild'])) { ?> <p class="error"><?php echo $errors['emaild']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div>
                 <input type="text" placeholder="Phone Number" name="phone">
+<?php  if (isset($errors['phone'])) { ?> <p class="error"><?php echo $errors['phone']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div class="v-grid">
                 <input type="password" placeholder="Password" name="password">
+<?php  if (isset($errors['password'])) { ?> <p class="error"><?php echo $errors['password']; ?></p> <?php } ?>
+<?php  if (isset($errors['passwordd'])) { ?> <p class="error"><?php echo $errors['passwordd']; ?></p> <?php } ?>
                 <!-- This is the error text, it displays form errors. -->
-                <p class="error">Password is incorrect.</p>
+                <!-- <p class="error">Password is incorrect.</p> -->
             </div>
         </div>
 
         <div class="form-row">
             <div class="v-grid">
-                <input type="password" placeholder="Confirm Password" name="confirm-password">
+                <input type="password" placeholder="Confirm Password" name="cpassword">
+<?php  if (isset($errors['cpassword'])) { ?> <p class="error"><?php echo $errors['cpassword']; ?></p> <?php } ?>
                 <!-- This is the error text, it displays form errors. -->
-                <p class="error">Password doesn't match.</p>
+                <!-- <p class="error">Password doesn't match.</p> -->
             </div>
         </div>
 
@@ -301,34 +304,40 @@
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
+    <?php  if (isset($errors['country'])) { ?> <p class="error"><?php echo $errors['country']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div>
                 <input type="text" placeholder="Address" name="address" required>
+    <?php  if (isset($errors['address'])) { ?> <p class="error"><?php echo $errors['address']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div>
                 <input type="text" placeholder="State" name="state" required>
+    <?php  if (isset($errors['state'])) { ?> <p class="error"><?php echo $errors['state']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div>
                 <input type="text" placeholder="City" name="city" required>
+    <?php  if (isset($errors['city'])) { ?> <p class="error"><?php echo $errors['city']; ?></p> <?php } ?>
             </div>
 
             <div>
-                <input type="text" placeholder="Zip Code" name="zip-code" required>
+                <input type="text" placeholder="Zip Code" name="zip" required>
+    <?php  if (isset($errors['zip'])) { ?> <p class="error"><?php echo $errors['zip']; ?></p> <?php } ?>
             </div>
         </div>
 
         <div class="form-row">
             <div>
-			    <textarea name="note" placeholder="Delivery note" id="delivery-note"></textarea>
+			    <textarea name="delivery_note" placeholder="Delivery note" id="delivery-note"></textarea>
+    <?php  if (isset($errors['delivery_note'])) { ?> <p class="error"><?php echo $errors['delivery_note']; ?></p> <?php } ?>
             </div>
         </div>
 
@@ -336,7 +345,7 @@
 
         <!-- This button submits this form. -->
         <div class="form-row">
-            <button type="submit" class="btn btn-primary">Complete</button>
+            <button type="submit" name="submit" class="btn btn-primary">Complete</button>
         </div>
     </section>
         

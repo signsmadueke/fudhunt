@@ -1,3 +1,18 @@
+<?php
+require 'include/function4user.php';
+if (isset($_SESSION['user_id'])) {
+	 $user_id = $_SESSION['user_id'];  
+  $result = fetch_user($user_id);
+   extract($result);
+
+ // var_dump($result); 
+
+}
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +35,7 @@
 
 <body id="confirm-order-page" class="container">
 	<!-- Wrapping everything in a form so it can be submitted to the database. -->
-	<form action="order-information">
+	<form action="" method="POST">
 		<section id="header" class="constrain header-white">
 			<a href="edit-profile" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
@@ -49,7 +64,7 @@
 				<div class="details">
 					<h5 class="location-address">
 						<img class="svg" src="assets/images/icons/map-pointer.svg" height="9px" alt="Store">
-						<span>76A Gwarimpa Estate, Abuja</span>
+						<span><?php $delivery_address =  $address.", ".$city.", ".$state; echo $delivery_address; ?></span>
 					</h5>
 					<p class="name">
 						<img class="svg" src="assets/images/icons/person.svg" height="9px" alt="Store">
@@ -75,18 +90,44 @@
 				</div>
 			</div>
 
-			<div class="cart-items constrain">
-				<div class="cart-item">
+		<div class="cart-items constrain">
+			<?php 
+		$cart = $_SESSION['cart'];
+		$prize = [];
+		$products = [];
+		foreach ($cart as $key ) {
+	$cartsql = "SELECT * FROM food WHERE food_id = $key";
+						$cartres = mysqli_query($link, $cartsql);
+						$cart = mysqli_fetch_assoc($cartres);
+						extract($cart);
+						$food_prize = floatval($food_prize);
+						array_push($prize, $food_prize);
+						array_push($products, $food_name);
+
+		
+		
+		
+		//var_dump($prod);
+
+		// var_dump($_SESSION['cart']);
+		 ?>
+		 <div class="cart-item">
 					<div class="image">
-						<img src="assets/images/products/21.jpg" height="100px" alt="Restaurant Image">
+						<img src="admin/<?php echo $food_pix; ?>" height="100px" alt="Restaurant Image">
 					</div>
 					<div class="details">
-						<h5 class="name">Hot Salami Pizza</h5>
-						<p class="product">$7.99</p>
+						<h5 class="name"><?php echo $food_name; ?></h5>
+						<p class="product">$<?php $fp = number_format($food_prize); echo $fp; ?>.00</p>
 					</div>
 				</div>
+			<?php } 
+			$p = array_sum($prize);
+			
 
-				<div class="cart-item">
+
+			?>
+
+				<!-- <div class="cart-item">
 					<div class="image">
 						<img src="assets/images/products/22.jpg" height="100px" alt="Restaurant Image">
 					</div>
@@ -94,9 +135,9 @@
 						<h5 class="name">Dungeness Crab Arancini</h4>
 						<p class="product">$8.99</p>
 					</div>
-				</div>
+				</div> -->
 
-				<div class="cart-item">
+				<!-- <div class="cart-item">
 					<div class="image">
 						<img src="assets/images/products/23.jpg" height="100px" alt="Restaurant Image">
 					</div>
@@ -104,14 +145,15 @@
 						<h5 class="name">Octopus</h5>
 						<p class="product">$9.99</p>
 					</div>
-				</div>
+				</div> -->
+
 			</div>
 		</section>
 		
 		<section id="cart-totals" class="constrain">
 			<div class="h-grid">
 				<p>Subtotal</p>
-				<p>$26.97</p>
+				<p>$<?php $pf = number_format($p);  echo $pf; ?>.00</p>
 			</div>
 			<div class="h-grid">
 				<p>Shipping Fee</p>
@@ -119,7 +161,7 @@
 			</div>
 			<div class="totals">
 				<h4>Total</h4>
-				<h4>$33.97</h4>
+				<h4>$<?php $pt = $p + 7; $pt = number_format($pt); echo $pt;  ?></h4>
 			</div>
 		</section>
 
@@ -299,7 +341,7 @@
 			</div>
 
 			<div class="constrain">
-				<textarea name="note" placeholder="Leave a note" id="note"></textarea>
+				<textarea name="delivery_note" placeholder="Leave a note" id="note"></textarea>
 			</div>
 		</section>
 
@@ -357,9 +399,15 @@
 		</section>
 
 		<div class="submit constrain">
-			<a href="order-information" class="big-cart-btn btn btn-primary constrain">
-				Pay $33.97
-			</a>
+
+			<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+			<input type="hidden" name="total_prize" value="<?php echo $p; ?>">
+			<input type="hidden" name="delivery_address" value="<?php echo $delivery_address; ?>">
+			<input type="hidden" name="delivery_note" value="<?php echo $delivery_note; ?>">
+
+			<button type="submit" name="submit" class="big-cart-btn btn btn-primary constrain">
+				Pay $<?php $pt = $p + 7; $pt = number_format($pt); echo $pt;  ?>.00
+			</button>
 		</div>
 	</form>
 
@@ -376,3 +424,13 @@
 </body>
 
 </html>
+
+
+<?php 	
+if (isset($_POST['submit'])) {
+	$products = implode( ",", $products);
+	$result = checkout($_POST, $products);
+	
+	// var_dump($result);
+}
+ ?>

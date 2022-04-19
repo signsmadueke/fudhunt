@@ -1,6 +1,14 @@
 <?php
-// require_once 'admin/config/db.php';
-// blockCRS($_SESSION['user'], 'login');
+require 'include/function4user.php';
+if (isset($_SESSION['user_id'])) {
+	 $user_id = $_SESSION['user_id'];  
+  $result = fetch_user($user_id);
+   extract($result);
+
+ // var_dump($result); 
+
+}
+
 
 ?>
 
@@ -34,7 +42,7 @@
 				<h5>DELIVERING TO</h5>
 				<p>
 					<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Map Pointer">
-					<span>76A Gwarimpa Estate, Abuja.</span>
+					<span><?php echo $address.', '.$city. ', '.$state.'.'; ?></span>
 					<span></span>
 					<img class="svg" src="assets/images/icons/chevron-down.svg" height="10px" alt="Expand">
 				</p>
@@ -229,17 +237,34 @@
 			</a>
 		</div>
 
+
+		
+
 		<div class="cuisines constrain"
 			data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
+
+
+		 				<?php 
+                        $response = fetch_cuisine();
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+                             
+                         ?>   
+
+
 			<div class="cuisine">
 				<a href="#" class="details">
 					<div class="image">
-						<img src="assets/images/cuisines/chad.jpeg" height="50px" alt="Chad">
+						<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="Chad">
 					</div>
-					<h5 class="name">Chad</h5>
+					<h5 class="name"><?php echo $cuisine_name; ?></h5>
 				</a>
 			</div>
 
+		<?php }} ?>
+<!-- 
 			<div class="cuisine">
 				<a href="#" class="details">
 					<div class="image">
@@ -319,7 +344,7 @@
 					</div>
 					<h5 class="name">Spanish</h5>
 				</a>
-			</div>
+			</div> -->
 		</div>
 	</section>
 
@@ -338,29 +363,46 @@
 			<!-- 
 				There's a ".bookmarked" class on the products that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon on top of the product image.
 			-->
+
+			<?php 
+                        $response = fetch_food();
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+
+                             // var_dump($row);
+                             
+                         ?>  
+
 			<div class="sale bookmarked">
 				<div class="details">
 					<a href="#" class="image">
-						<img src="assets/images/products/7.jpg" height="120px" alt="Fried Noodles and Chicken">
+						<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
 						<button type="button" class="btn bookmark">
 							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 						</button>
 					</a>
 					<div class="text">
-						<a href="#" class="name">Margherita Pizza</a>
+						<a href="#" class="name"><?php echo $food_name; ?></a>
 						<p>
-							<span class="price">$3.99</span>
+							<span class="price">$<?php $fp = number_format($food_prize); echo $fp; ?></span>
 							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								
+								<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								</a>
 								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+								</a>
 							</div>
 						</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="sale">
+		<?php }} ?>
+
+<!-- 			<div class="sale">
 				<div class="details">
 					<a href="#" class="image">
 						<img src="assets/images/products/8.jpg" height="120px" alt="Fried Noodles and Chicken">
@@ -468,7 +510,8 @@
 						</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
+
 		</div>
 	</section>
 

@@ -1,21 +1,18 @@
-<?php
-// require_once 'admin/config/db.php';
+<?php   
+require 'include/function4user.php';
 
-// if (isset($_POST['signin'])) {
-//     $response = loginUser($_POST);
-//     if ($response === true) {
-//         echo "<script>alert('Login was successful! Redirecting...')</script>";
-//         header("refresh:1; url=discover");
-//     } else if (is_array($response)) {
-//         foreach ($response as $err) {
-//             echo "<script>alert('$err')</script>";
-//         }
-//     } else {
-//         echo "<script>alert('$response')</script>"; 
-//     }
-// }
+ if (isset($_POST['signin'])) {
+  $result = login_user($_POST);
+  if ($result === true) {
+   header("Location: index.php");
+  } else {
+    $errors = $result;
+    extract($errors);
+    
+  }
 
-?>
+}
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,20 +39,24 @@
     </section>
 
     <section id="login-form" class="constrain">
-        <form action="index" method="POST">
+        <form  method="POST">
             
             
             <div class="form-row">
                 <div>
-                    <input type="text" placeholder="Username" name="username">
+                    <input type="text" placeholder="Email" name="email">
+     <?php  if (isset($errors['emailv'])) { ?> <p class="error"><?php echo $errors['emailv']; ?></p> <?php } ?>
+    <?php  if (isset($errors['emaila'])) { ?> <p class="error"><?php echo $errors['emaila']; ?></p> <?php } ?>
+    <?php  if (isset($errors['invalidl'])) { ?> <p class="error"><?php echo $errors['invalidl']; ?></p> <?php } ?>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="v-grid">
                     <input type="password" placeholder="Password" name="password">
+     <?php  if (isset($errors['password'])) { ?> <p class="error"><?php echo $errors['password']; ?></p> <?php } ?>
                     <!-- This is the error text, it displays form errors. -->
-                    <p class="error">Password is incorrect.</p>
+                    <!-- <p class="error">Password is incorrect.</p> -->
                 </div>
             </div>
 

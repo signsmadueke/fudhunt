@@ -1,3 +1,32 @@
+<?php
+require 'include/function4user.php';
+if (isset($_SESSION['user_id'])) {
+	 $user_id = $_SESSION['user_id'];  
+  $result = fetch_user($user_id);
+   extract($result);
+
+ // var_dump($result); 
+
+}
+
+
+if (isset($_GET['cuisine_id'])) {
+	 $cuisine_id = $_GET['cuisine_id']; 
+	  $response = fetch_cuisine_food($cuisine_id);
+	  $nc = count($response);
+
+	  $cn = fetch_single_cuisine($cuisine_id);
+	 extract($cn);
+
+}else{
+	header('Location:'.$_SERVER['HTTP_REFERER']);
+	exit();
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
