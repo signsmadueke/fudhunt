@@ -108,7 +108,7 @@ if (isset($_SESSION['user_id'])) {
 						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 					</button>
 
-					<h5 class="price">$<?php $fp = number_format($food_prize); echo $fp; ?></h5>
+					<h5 class="price">$<?php echo $food_prize; ?></h5>
 					<div class="quantity">
 						<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
 						<span class="value">0</span>

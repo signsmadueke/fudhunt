@@ -386,7 +386,7 @@ if (isset($_SESSION['user_id'])) {
 					<div class="text">
 						<a href="#" class="name"><?php echo $food_name; ?></a>
 						<p>
-							<span class="price">$<?php $fp = number_format($food_prize); echo $fp; ?></span>
+							<span class="price">$<?php echo $food_prize; ?></span>
 							<div class="quantity">
 								
 								<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>

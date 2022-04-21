@@ -117,7 +117,7 @@ if (isset($_SESSION['user_id'])) {
 					</div>
 					<div class="details">
 						<h5 class="name"><?php echo $food_name; ?></h5>
-						<p class="product">$<?php $fp = number_format($food_prize); echo $fp; ?>.00</p>
+						<p class="product">$<?php echo $food_prize; ?>.00</p>
 					</div>
 				</div>
 			<?php } 

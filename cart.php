@@ -62,7 +62,7 @@ require 'include/function4user.php';
 			</a>
 			<div class="details">
 				<a href="#" class="name"><?php echo $food_name; ?></a>
-				<h5 class="price">$<?php $fp = number_format($food_prize); echo $food_prize; ?></h5>
+				<h5 class="price">$<?php echo $food_prize; ?></h5>
 				<div class="quantity">
 					<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
 					<span class="value">0</span>
