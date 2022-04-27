@@ -295,11 +295,31 @@ require 'include/function4user.php';
 			</div>
 	</section>
 
+
 	<section id="big-cart-btn">
 		<!-- This button submits this form. -->
-		<a href="confirm-order" class="big-cart-btn btn btn-primary constrain">
+		<?php 
+		if (isset($_SESSION['user_id'])) {
+		
+		 ?>
+		<a href="confirm-order.php" class="big-cart-btn btn btn-primary constrain">
 			Checkout
 		</a>
+
+	<?php } ?>
+
+
+	<?php 
+		if (!isset($_SESSION['user_id'])) {
+		 ?>
+		<a href="#" onclick="alert('Please Login to continue checkout'); window.location='login.php'" class="big-cart-btn btn btn-primary constrain">
+			Checkout
+		</a>
+
+	<?php } ?>
+
+
+
 	</section>
 	
 	<!-- This is that menu at the bottom of every page -->

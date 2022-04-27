@@ -1,3 +1,7 @@
+<?php 	
+require_once 'include/header.php';
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,27 +73,39 @@
 	<!-- Tab content -->
 	<!-- The tabs have empty states already designed. You can display them by adding a ".empty" class to the tab-content section. It'll look like this: "tab-content empty". I've done this for the Ongoing tab already.  -->
 	<!-- This is the Ongoing tab -->
-	<section id="ongoing" class="tab-content active empty">
+	<section id="ongoing" class="tab-content active">
 		<div class="orders constrain">
 
+
+					<?php 
+                        $response = fetch_pending_order($user_id);
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+                         ?>  
+
+
 			<a href="track-order" class="order">
 				<div class="image">
-					<img src="assets/images/restaurants/kichi.png" height="95px" alt="kichi">
+					<!-- <img src="assets/images/restaurants/kichi.png" height="95px" alt="kichi"> -->
 				</div>
 				<div class="details">
-					<h5 class="name">Kichi Coffee & Drink</h5>
+					<h5 class="name"><?php echo $products; ?></h5>
 					<p class="id">
-						<span>ID:</span> 43e2 116H
+						<span>ID:</span> 43e<?php echo $order_id; ?>	
 					</p>
 					<p class="items">
-						1 Item
+						<!-- 1 Item -->
 					</p>
 					<!-- This is the status of the order, The statuses have different classes to change the colors -->
-					<p class="status waiting">Waiting</p>
+					<p class="status waiting"><?php echo $delivery_status; ?></p>
 				</div>
 			</a>
 
-			<a href="track-order" class="order">
+		<?php }} ?>
+
+<!-- 			<a href="track-order" class="order">
 				<div class="image">
 					<img src="assets/images/restaurants/kichi.png" height="95px" alt="kichi">
 				</div>
@@ -151,8 +167,10 @@
 					</p>
 					<p class="status waiting">Waiting</p>
 				</div>
-			</a>
+			</a> -->
 		</div>
+
+
 
 		<!-- This is the empty state of the Ongoing tab -->
 		<div class="empty-state constrain">
@@ -172,20 +190,30 @@
 	<section id="history" class="tab-content">
 		<div class="orders constrain">
 
+							<?php 
+                        $response = fetch_order($user_id);
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+                         ?>   
+
 			<a href="track-order" class="order">
 				<div class="image">
-					<img src="assets/images/restaurants/kichi.png" height="95px" alt="kichi">
+					<!-- <img src="assets/images/restaurants/kichi.png" height="95px" alt=""> -->
 				</div>
 				<div class="details">
-					<h5 class="name">Kichi Coffee & Drink</h5>
+					<h5 class="name"><?php echo $products; ?></h5>
 					<p class="items">
-						6 Items
+						<!-- 6 Items -->
+						<b>Delivery Status: </b> <?php echo $delivery_status; ?>
 					</p>
-					<p class="date">Yesterday</p>
+					<p class="date"><?php echo $delivery_time; ?></p>
 				</div>
 			</a>
 
-			<a href="track-order" class="order">
+				<?php }} ?>
+			<!-- <a href="track-order" class="order">
 				<div class="image">
 					<img src="assets/images/restaurants/kfc.png" height="95px" alt="kichi">
 				</div>
@@ -248,7 +276,7 @@
 					</p>
 					<p class="date">Jun 09, 2020</p>
 				</div>
-			</a>
+			</a> -->
 		</div>
 
 		<div class="empty-state constrain">

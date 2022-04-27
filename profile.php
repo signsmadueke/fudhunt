@@ -1,14 +1,5 @@
 <?php
-// require_once 'admin/config/db.php';
-// // blockCRS($_SESSION['user'], 'login');
-// $user_id = $_SESSION['user'];
-
-// $user_profile = getWhere('users', 'user_id', $user_id);
-// if (isset($user_profile)) {
-// 	foreach ($user_profile as $user) {
-// 		extract($user);
-// 	}
-// }
+require_once 'include/header.php';
 
 ?>
 
@@ -42,8 +33,8 @@
 			</div>
 			
 			<div class="details">
-				<h3 class="name">Signs Madueke</h3>
-				<p>+234 907 151 0046</p>
+				<h3 class="name"><?php echo $fullname; ?></h3>
+				<p><?php echo $phone; ?></p>
 			</div>
 			
 			<img class="svg chevron-icon" src="assets/images/icons/chevron-right.svg" height="20px">

@@ -45,7 +45,7 @@ if (isset($_SESSION['user_id'])) {
 				<h1 class="title">Confirm Order</h1>
 
 				<p class="id">
-					<span>ID:</span> 43e2 116H
+					<!-- <span>ID:</span> 43e2 116H -->
 				</p>
 			</div>
 		</section>
@@ -54,7 +54,7 @@ if (isset($_SESSION['user_id'])) {
 		<section id="delivery-address" class="constrain">
 			<div class="header">
 				<h4>Deliver to</h4>
-				<a href="add-new-address" class="link link-primary">Add new address</a>
+				<a href="add-new-address.php" class="link link-primary">Add new address</a>
 			</div>
 
 			<div class="address">
@@ -84,8 +84,8 @@ if (isset($_SESSION['user_id'])) {
 				<div class="v-grid">
 					<h5>Delivery Time</h5>
 					<div class="h-grid">
-						<p>10:11 AM</p>
-						<p>Oct 6, 2020</p>
+						<p><?php echo date("h:i:sa"); ?></p>
+						<p><?php echo date("Y/m/d"); ?></p>
 					</div>
 				</div>
 			</div>
@@ -426,11 +426,17 @@ if (isset($_SESSION['user_id'])) {
 </html>
 
 
+
 <?php 	
 if (isset($_POST['submit'])) {
 	$products = implode( ",", $products);
 	$result = checkout($_POST, $products);
-	
-	// var_dump($result);
+	if ($result === true) {
+		echo '<script type="text/javascript">
+	alert("You Order has been successfully placed");
+	window.location= "index.php";
+</script>';
+		
+	}
 }
  ?>

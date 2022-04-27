@@ -1,3 +1,24 @@
+<?php   
+require 'include/function4user.php';
+if (isset($_GET['email'])) {
+    extract($_GET);
+}
+
+ if (isset($_POST['submit'])) {
+  $code = implode($_POST);
+  // var_dump($code);
+  
+   $result = reset_password($code, $email);
+  if ($result === true) {
+    header("Location: reset-password.php?email=$email");
+  } else {
+    $errors = $result;
+     extract($errors); 
+  }
+var_dump($result);
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,13 +53,14 @@
     </section>
 
     <section id="verification-form" class="constrain">
-        <form action="reset-password" class="otp" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+        <form class="otp" data-group-name="digits" data-autosubmit="false" autocomplete="off" method="post">
             <div class="form-row">
                 <input type="text" id="digit-1" name="digit-1" data-next="digit-2"/>
                 <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1"/>
                 <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2"/>
                 <input type="text" id="digit-4" name="digit-4" data-previous="digit-3"/>
             </div>
+            <!-- <input type="hidden" name="email" value="<?php echo $email; ?>"> -->
 
             <p class="error">Oh no! Your account or password is incorrect, please check again.</p>
 
@@ -49,7 +71,7 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="btn btn-primary">Next</button>
+                <button type="submit" name="submit" class="btn btn-primary">Next</button>
             </div>
         </form>
     </section>

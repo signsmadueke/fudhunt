@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function send_mail($to, $username, $subject, $body){
+function send_mail($to, $subject, $body){
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
@@ -10,20 +10,20 @@ require 'PHPMailer/src/SMTP.php';
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
-    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'premium80.web-hosting.com';  // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'support@jektrade.com';                 // SMTP username
-    $mail->Password = 'Goodboy123??';                           // SMTP password
+    $mail->Username = 'stanfugy8@gmail.com';                 // SMTP username
+    $mail->Password = 'mustpay1';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('support@jektrade.com', 'Jek');
-    $mail->addAddress($to, $username);     // Add a recipient
+    $mail->setFrom('stanfugy8@gmail.com', 'Signs');
+    $mail->addAddress($to);     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('support@jektrade.com', 'Do not reply');
+    $mail->addReplyTo('stanfugy8@gmail.com', 'Do not reply');
     //$mail->addCC('cc@example.com'); 
     //$mail->addBCC('email@domain.com', '');
 

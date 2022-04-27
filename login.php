@@ -40,8 +40,13 @@ require 'include/function4user.php';
 
     <section id="login-form" class="constrain">
         <form  method="POST">
+
+
+            <?php if (isset($_GET['reg'])) {
+              ?>
+            <p class="error">You have successfully Registered with us <p>
             
-            
+            <?php } ?>
             <div class="form-row">
                 <div>
                     <input type="text" placeholder="Email" name="email">
@@ -61,7 +66,7 @@ require 'include/function4user.php';
             </div>
 
             <div class="form-row reset-password-link">
-                <a href="forgot-password" class="link link-secondary">Forgot password!</a>
+                <a href="forgot-password.php" class="link link-secondary">Forgot password!</a>
             </div>
 
             <div></div>

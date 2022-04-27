@@ -1,3 +1,23 @@
+<?php   
+require 'include/function4user.php';
+if (isset($_GET['email'])) {
+    extract($_GET);
+}
+
+ if (isset($_POST['submit'])) {
+  
+   $result = new_password($_POST, $email);
+  if ($result === true) {
+    header("Location: login.php?reset=true");
+  } else {
+    $errors = $result;
+     extract($errors); 
+  }
+ var_dump($result);
+}
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +52,7 @@
     </section>
 
     <section id="reset-password-form" class="constrain">
-        <form action="login">
+        <form method="post">
             <div class="form-row">
                 <div>
                     <input type="password" placeholder="New Password" name="password">
@@ -41,14 +61,14 @@
 
             <div class="form-row">
                 <div>
-                    <input type="password" placeholder="Confirm Password" name="password">
+                    <input type="password" placeholder="Confirm Password" name="cpassword">
                 </div>
             </div>
 
             <div></div>
 
             <div class="form-row">
-                <button type="submit" class="btn btn-primary">Done</button>
+                <button type="submit" name="submit" class="btn btn-primary">Done</button>
             </div>
         </form>
     </section>

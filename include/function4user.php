@@ -2,17 +2,17 @@
 ob_start();
 session_start();
 
-// define("HOST", "localhost");
-// define("USERNAME", "aplusvgy_escrow2");
-// define("PASSWORD", "aplusvgy_escrow2");
-// define("DBNAME", "aplusvgy_escrow2");
-
 define("HOST", "localhost");
-define("USERNAME", "root");
+define("USER", "root");
 define("PASSWORD", "");
-define("DBNAME", "signs");
+define("DATABASE", "fudhunt");
 
-$link = mysqli_connect(HOST, USERNAME, PASSWORD, DBNAME);
+// define('HOST', 'localhost:8889');
+// define('USER', 'root');
+// define('PASSWORD', 'root');
+// define('DATABASE', 'fudhunt');
+
+$link = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 
 require_once 'mail-function.inc.php';
 
@@ -285,24 +285,21 @@ function register_user($post){
          $query = validateQuery($sql);
         $user_id = mysqli_insert_id($link);
 
-        var_dump($user_id);
+        // var_dump($user_id);
         
         $sql = "INSERT INTO location (user_id, address, city, zip, state, country, delivery_note, phone, location_status ) VALUES ('$user_id', '$address', '$city', '$zip', '$state', '$country', '$delivery_note', '$phone', 'active')";
 
          $query = validateQuery($sql);
-         echo mysqli_error($link);
+         // echo mysqli_error($link);
 
-         
-        
-
-        return true;
+      //  return true;
         
         if ($query) {
-            $subject = "Welcome to Escrow";
-            require_once 'temp.php';
-            $response = send_mail($email, $fullname, $subject, $body);
+            $subject = "Welcome to fudhunt";
+            $body = "Dear $fullname, <br> You are welcome to fudhunt. We are at your service <br> Thank You";
 
-            if ($response) {
+            if ($query) {
+                 $response = send_mail($email, $subject, $body);
                     return true;
             } else {
                 $errors['sendEmail'] = "Ooops!!! Something went wrong. (Email)";
@@ -318,6 +315,158 @@ function register_user($post){
 
 }
 
+
+function forget($post){
+    global $link;
+    $err_flag = false;
+    $errors = [];
+    extract($post);
+
+    if (!empty($email)) {
+        $tmp = sanitize($email);
+        if ($tmp) {
+            $email = $tmp;
+        } else {
+            $err_flag = true;
+            $errors['emailv'] = "Please enter a valid Email";
+        }
+    } else {
+        $err_flag = true;
+        $errors['emaila'] = "Please enter your Email";
+    }
+
+    if ($err_flag === false) {
+
+
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $query = mysqli_query($link, $sql);
+    if (mysqli_num_rows($query) > 0) {
+
+        $reset = rand(1000,9999);
+
+        $sql = "UPDATE users SET  reset ='$reset' WHERE email = '$email'";
+          $query = mysqli_query($link, $sql);
+
+
+        $subject = "Forget password";
+        $body = "We have received a request to reset the password for your account. <br>
+
+        Your password reset link is http://localhost:8080/fudhunt2/verification.php?email=$email <br>
+        Reset Code: $reset
+        ";
+
+
+
+        send_mail($email, $subject, $body);
+
+        } 
+}
+}
+
+function new_password($post, $email){
+    global $link;
+    $err_flag = false;
+    $errors = [];
+    extract($post);
+        
+    if (!empty($email)) {
+        $tmp = sanitize($email);
+        if ($tmp) {
+            $email = $tmp;
+        } else {
+            $err_flag = true;
+            $errors['emailv'] = "Please enter a valid Email";
+        }
+    } else {
+        $err_flag = true;
+        $errors['emaila'] = "Please enter your Email";
+    }
+
+     if (!empty($password)) {
+        $password = sanitize($password);
+    } else {
+        $errors['password'] = "Enter your password";
+        $err_flag = true;
+    }
+
+    if (!empty($cpassword)) {
+        $cpassword = sanitize($cpassword);
+    } else {
+        $errors['cpassword'] = "Confirm your password";
+        $err_flag = true;
+    }
+
+
+
+    if (isset($password) && isset($cpassword)) {
+        if ($password == $cpassword) {
+           $password =  password_hash($cpassword, PASSWORD_DEFAULT);
+        } else {
+            $errors['passwordd'] = "Passwords do not match";
+            $err_flag = true;
+        }
+    }
+
+    if ($err_flag === false) {
+         $sql = "UPDATE users SET  password ='$password' WHERE email = '$email'";
+             $query = mysqli_query($link, $sql);
+
+    if ($query) {
+        return true;
+    }
+    
+
+    } return $errors;
+}
+
+
+function reset_password($code, $email){
+    global $link;
+    $err_flag = false;
+    $errors = [];
+        echo $email;
+
+    if (!empty($email)) {
+        $tmp = sanitize($email);
+        if ($tmp) {
+            $email = $tmp;
+        } else {
+            $err_flag = true;
+            $errors['emailv'] = "Please enter a valid Email";
+        }
+    } else {
+        $err_flag = true;
+        $errors['emaila'] = "Please enter your Email";
+    }
+
+
+
+    if (!empty($code)) {
+        $code = sanitize($code);
+    } else {
+        $err_flag = true;
+        $errors['code'] = "Please enter your rest code";
+    }
+
+    if ($err_flag === false) {
+
+        // var_dump($code);
+       
+
+        $sql = "SELECT * FROM users WHERE email = '$email' AND reset = '$code'";
+        $query = mysqli_query($link, $sql);
+
+        // var_dump($query);
+            if (mysqli_num_rows($query) > 0) {
+            return true;
+        }   else {
+                    $errors['invalidl'] = "Invalid reset code";
+                    return $errors;
+                }
+    } return $errors;
+}
+
+   
 
 
 
@@ -373,9 +522,38 @@ function fetch_userAndAddress($user_id){
     } return false;
 }
 
+
+function fetch_pending_order($user_id){
+    global $link;
+    $sql = "SELECT * FROM order_list WHERE user_id = '$user_id' AND delivery_status = 'pending'";
+    $query = mysqli_query($link, $sql);
+    $posts = [];
+    if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+            $posts[] = $row;
+        }
+        return $posts;
+    } return false;
+}
+
+
+function fetch_order($user_id){
+    global $link;
+    $sql = "SELECT * FROM order_list WHERE user_id = '$user_id'";
+    $query = mysqli_query($link, $sql);
+    $posts = [];
+    if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+            $posts[] = $row;
+        }
+        return $posts;
+    } return false;
+}
+
+
 function fetch_cuisine_food($cuisine_id){
     global $link;
-    $sql = "SELECT * FROM food WHERE cuisine_id = '$cuisine_id'";
+    $sql = "SELECT * FROM food WHERE cuisine_id = '$cuisine_id' LIMIT 20";
     $query = mysqli_query($link, $sql);
     $posts = [];
     if (mysqli_num_rows($query) > 0) {
@@ -436,7 +614,7 @@ function fetch_restaurant(){
 
 function fetch_food(){
     global $link;
-    $sql = "SELECT * FROM food ";
+    $sql = "SELECT * FROM food LIMIT 30";
     $query = mysqli_query($link, $sql);
     $posts = [];
     if (mysqli_num_rows($query) > 0) {
@@ -490,6 +668,7 @@ function checkout($post, $products){
 
          $query = validateQuery($sql);
         return true;
+        unset($_SESSION['cart']);
     }
 
     return $errors;

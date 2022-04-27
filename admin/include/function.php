@@ -2,18 +2,24 @@
 ob_start();
 session_start();
 
-// define("HOST", "localhost");
-// define("USERNAME", "aplusvgy_escrow2");
-// define("PASSWORD", "aplusvgy_escrow2");
-// define("DBNAME", "aplusvgy_escrow2");
-
 define("HOST", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "");
-define("DBNAME", "signs");
+define("DBNAME", "fudhunt");
+
+// define('HOST', 'localhost:8889');
+// define('USER', 'root');
+// define('PASSWORD', 'root');
+// define('DATABASE', 'fudhunt');
 
 $link = mysqli_connect(HOST, USERNAME, PASSWORD, DBNAME);
 $conn = $link;
+
+if ($link) {
+    echo 'Connected to DATABASE';
+} else {
+    echo 'Failed to connect to DATABASE';
+}
 
 function upload_image($file, &$errors){
 	$size = $file['size'];

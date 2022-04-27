@@ -1,3 +1,20 @@
+<?php   
+require 'include/function4user.php';
+
+ if (isset($_POST['submit'])) {
+  $result = forget($_POST);
+  if ($result === true) {
+  echo "string";
+   // header("Location: index.php");
+  } else {
+    $errors = $result;
+    // extract($errors);
+    
+  }
+
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +49,7 @@
     </section>
 
     <section id="forgot-password-form" class="constrain">
-        <form action="verification">
+        <form method="post">
             <div class="form-row">
                 <div>
                     <input type="email" placeholder="Email Address" name="email">
@@ -40,7 +57,7 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="btn btn-primary">Next</button>
+                <button type="submit" name="submit" class="btn btn-primary">Next</button>
             </div>
         </form>
     </section>
