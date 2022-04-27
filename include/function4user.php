@@ -2,15 +2,15 @@
 ob_start();
 session_start();
 
-define("HOST", "localhost");
-define("USER", "root");
-define("PASSWORD", "");
-define("DATABASE", "fudhunt");
+// define("HOST", "localhost");
+// define("USER", "root");
+// define("PASSWORD", "");
+// define("DATABASE", "fudhunt");
 
-// define('HOST', 'localhost:8889');
-// define('USER', 'root');
-// define('PASSWORD', 'root');
-// define('DATABASE', 'fudhunt');
+define('HOST', 'localhost:8889');
+define('USER', 'root');
+define('PASSWORD', 'root');
+define('DATABASE', 'fudhunt');
 
 $link = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 
