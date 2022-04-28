@@ -1,3 +1,8 @@
+<?php
+require_once 'include/header.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +24,7 @@
 <body id="edit-profile-page" class="container with-bottom-menu bg-offwhite">
 	<section id="header" class="header-primary">
 		<div class="header-actions constrain">
-			<a href="profile" class="back link">
+			<a href="#" onclick="history.back()" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
 			</a>
 			<button class="link save">Save</button>
@@ -46,48 +51,52 @@
 	</section>
 
 	<section id="profile-settings">
-		<div class="settings constrain">
-			<a class="setting">
+		<form action="verification" class="settings constrain">
+			<div class="setting form-row">
 				<div class="details">
-					<p class="title">Full Name</p>
-					<h5 class="name">Signs Madueke</h5>
+					<input value="<?php echo $fullname; ?>" type="text" placeholder="Full name" name="fullname" id="fullname">
+					<label for="fullname">Full Name</label>
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
+			</div>
 
-			<a class="setting">
+			<div class="setting form-row">
 				<div class="details">
-					<p class="title">Password</p>
-					<!-- This password is just a placeholder, it shouldn't be dynamic. -->
-					<h5 class="name password" class="password">..........</h5>
+					<input value="<?php echo $fullname; ?>" type="text" placeholder="Email" name="email" id="email">
+					<label for="email">Email Address</label>
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
+			</div>
 
-			<a class="setting">
+			<div class="setting form-row">
 				<div class="details">
-					<p class="title">Phone Number</p>
-					<h5 class="name">+234 (907) 151 0046</h5>
+					<input value="<?php echo $fullname; ?>" type="text" placeholder="Phone Number" name="phone" id="phone">
+					<label for="phone">Phone Number</label>
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
+			</div>
 
-			<a class="setting">
+			<div class="setting form-row">
 				<div class="details">
-					<p class="title">Email</p>
-					<h5 class="name">signsmadueke@gmail.com</h5>
+					<input type="password" placeholder="Password" name="password" id="password">
+					<label for="password">Password</label>
+					<!-- This is the error text, it displays form errors. -->
+					<!-- <p class="error">Password is incorrect.</p> -->
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
+			</div>
 
-			<a class="setting">
+			<div class="setting form-row">
 				<div class="details">
-					<p class="title">Date of Birth</p>
-					<h5 class="name">Oct 30, 2000</h5>
+					<input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword">
+					<label for="cpassword">Confirm Password</label>
+					<!-- This is the error text, it displays form errors. -->
+					<!-- <p class="error">Password doesn't match.</p> -->
 				</div>
-				<span class="chevron-icon"><img class="svg" src="assets/images/icons/chevron-right.svg" height="20px"></span>
-			</a>
-		</div>
+			</div>
+
+			<div></div>
+
+			<div class="setting form-row">
+				<button type="submit" class="btn btn-primary">Continue</button>
+			</div>
+		</form>
 	</section>
 
 	<!-- This is that menu at the bottom of every page -->

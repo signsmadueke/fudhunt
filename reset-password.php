@@ -1,21 +1,21 @@
-<?php   
-require 'include/function4user.php';
-if (isset($_GET['email'])) {
-    extract($_GET);
-}
+<?php
+// require 'include/function4user.php';
+// if (isset($_GET['email'])) {
+//     extract($_GET);
+// }
 
- if (isset($_POST['submit'])) {
-  
-   $result = new_password($_POST, $email);
-  if ($result === true) {
-    header("Location: login.php?reset=true");
-  } else {
-    $errors = $result;
-     extract($errors); 
-  }
- var_dump($result);
-}
- ?>
+// if (isset($_POST['submit'])) {
+
+//     $result = new_password($_POST, $email);
+//     if ($result === true) {
+//         header("Location: login.php?reset=true");
+//     } else {
+//         $errors = $result;
+//         extract($errors);
+//     }
+//     var_dump($result);
+// }
+?>
 
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ if (isset($_GET['email'])) {
 
     <section id="header" class="constrain">
         <div class="navigation">
-            <a href="verification" class="back">
+            <a href="#" onclick="history.back()" class="back link">
                 <img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
             </a>
         </div>
@@ -52,23 +52,25 @@ if (isset($_GET['email'])) {
     </section>
 
     <section id="reset-password-form" class="constrain">
-        <form method="post">
+        <form method="post" action="login">
             <div class="form-row">
-                <div>
-                    <input type="password" placeholder="New Password" name="password">
+                <div class="v-grid">
+                    <input type="password" placeholder="New Password" name="password" id="password" required>
+                    <label for="password">New Password</label>
                 </div>
             </div>
 
             <div class="form-row">
-                <div>
-                    <input type="password" placeholder="Confirm Password" name="cpassword">
+                <div class="v-grid">
+                    <input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" required>
+                    <label for="cpassword">Confirm Password</label>
                 </div>
             </div>
 
             <div></div>
 
             <div class="form-row">
-                <button type="submit" name="submit" class="btn btn-primary">Done</button>
+                <button type="submit" name="submit" class="btn btn-primary">Reset Password</button>
             </div>
         </form>
     </section>
@@ -82,4 +84,5 @@ if (isset($_GET['email'])) {
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/smooth-scroll.js"></script>
 </body>
+
 </html>

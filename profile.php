@@ -29,14 +29,14 @@ require_once 'include/header.php';
 
 		<a href="edit-profile" class="user-details constrain">
 			<div class="image">
-				<img src="assets/images/humans/1.png" height="70px" alt="Fried Noodles">
+				<img src="assets/images/humans/avatar.png" height="70px">
 			</div>
-			
+
 			<div class="details">
 				<h3 class="name"><?php echo $fullname; ?></h3>
 				<p><?php echo $phone; ?></p>
 			</div>
-			
+
 			<img class="svg chevron-icon" src="assets/images/icons/chevron-right.svg" height="20px">
 		</a>
 

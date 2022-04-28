@@ -395,12 +395,14 @@ select,
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
 textarea {
 	padding: 15px;
+	margin: 0;
 	border: 1px solid #edf1f7;
 	background-color: #ffffff;
 	border-radius: 8px;
 	font-size: 13px;
 	font-family: "DM Sans", sans-serif;
-	line-height: 1.3;
+	line-height: 14.9px;
+	max-height: 72.9px;
 	font-weight: 400;
 	outline: 0;
 	-webkit-appearance: none;
@@ -427,20 +429,58 @@ textarea {
 	// 		padding: 0;
 	// 	}
 	// }
+
+	&::placeholder {
+		opacity: 0;
+	}
+
+	&+label {
+		padding: 21px 15px 15px 15px;
+		text-transform: none;
+		cursor: text;
+		position: absolute;
+		top: 0;
+		user-select: none;
+		outline: 0;
+	}
+
+	padding: 30px 15px 10px 15px !important;
+
+	&:focus {
+		&+label {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 11px;
+		}
+	}
+
+	&:active {
+		&+label {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 11px;
+		}
+	}
+
+	&:valid {
+		&+label {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 11px;
+		}
+	}
 }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
-textarea {
-	&::placeholder {
-		user-select: none;
-		color: #c5cee0;
-		cursor: text;
+.form-row {
+	.v-grid {
+		position: relative;
 	}
 }
 
 input[type="password"] {
 	font-size: 30px !important;
-	line-height: 1 !important;
+	line-height: 16.9px !important;
+	max-height: 57.9px !important;
 	letter-spacing: -1.5px !important;
 	padding: 6px 15px !important;
 
@@ -606,8 +646,8 @@ input[type="password"] {
 }
 
 .radio input:checked~.check {
-	border-color: #fa6400;
-	box-shadow: 0px 0px 0px 15px #fa6400 inset;
+	// border-color: #fa6400;
+	// box-shadow: 0px 0px 0px 15px #fa6400 inset;
 	background: linear-gradient(333deg, #ffb22e, #fa9600, #fa6400, #fa9600);
 	background-size: 600% 600%;
 	animation: bg-primary-animation 4s linear infinite;
@@ -626,9 +666,9 @@ input[type="password"] {
 	align-items: center;
 	position: relative;
 	border-radius: 100px;
-	background-color: #edf1f6;
-	border: 2px solid #edf1f6;
-	box-shadow: 0px 0px 0px 0px #fa6400 inset;
+	background: #edf1f6;
+	// border: 2px solid #edf1f6;
+	// box-shadow: 0px 0px 0px 0px #fa6400 inset;
 	transition: all .35s cubic-bezier(.48, 1.42, .48, 1.45) 0s;
 }
 
@@ -1199,29 +1239,49 @@ form {
 }
 
 // ADD NEW ADDRESS
-#add-new-address-form {
-	padding: 15px;
+#add-new-address {
 
-	form {
-		.form-row {
-			&:nth-child(1) {
-				grid-template-columns: 1fr 1fr;
+	#header {
+
+		.header-actions {
+			display: grid;
+			grid-gap: 15px;
+			grid-auto-flow: column;
+			align-items: center;
+			padding: 0;
+
+			.back {
+				padding: 5px 10px 5px 0;
+				justify-self: left;
+
+				svg,
+				img {
+					height: 12px;
+
+					path {
+						fill: #ffffff;
+					}
+				}
 			}
 
-			&:nth-child(2) {
-				grid-template-columns: 1fr auto;
+			.edit {
+				padding: 5px 0px 5px 10px;
+				font-size: 13px;
+				line-height: 1.3;
+				font-weight: 500;
+				color: #ffffff;
+				justify-self: right;
 			}
 		}
 
-		.locate {
-			padding: 15px;
-			border: 1px solid #edf1f7;
-
-			svg,
-			img {
-				height: 15.56px;
-			}
+		h1 {
+			color: #ffffff;
+			padding: 0;
 		}
+	}
+
+	#add-new-address-form {
+		padding: 20px 15px;
 	}
 }
 
@@ -1433,6 +1493,7 @@ form {
 }
 
 
+
 // LOGIN
 #login-page {
 	display: grid;
@@ -1561,7 +1622,7 @@ form {
 }
 
 // CREATE ACCOUNT PAGE
-#create-new-account-page {
+#register-page {
 	#header {
 		padding-top: 50px;
 		display: grid;
@@ -1963,11 +2024,8 @@ form {
 
 	#categories {
 		display: grid;
-		grid-gap: 20px;
-		padding: 30px 0;
+		grid-gap: 5px;
 		margin-bottom: 30px;
-		background: #ffffff;
-		box-shadow: 0px 2px 10px #e6e8ef;
 
 		.cuisines {
 			padding: 0;
@@ -1991,20 +2049,24 @@ form {
 				.details {
 					display: grid;
 					text-align: center;
-					grid-gap: 10px;
+					grid-gap: 7.5px;
 					text-decoration: none;
-					max-width: 65px;
+					max-width: 80px;
+					padding: 7.5px;
+					margin: 15px 0px;
+					background: #ffffff;
+					box-shadow: 0px 2px 10px #e6e8ef;
+					border-radius: 5px;
 
 					.image {
 						background: #ffffff;
-						box-shadow: 0px 2px 10px #e6e8ef;
 						display: grid;
-						// padding: 10px;
 						width: 65px;
 						height: 65px;
 						max-width: 65px;
 						border-radius: 5px;
 						overflow: hidden;
+						box-shadow: none;
 
 						img {
 							width: 100%;
@@ -3697,10 +3759,16 @@ form {
 				text-align: center;
 			}
 
+			input {
+				background-color: #F7F9FC;
+				width: 100%;
+				border-radius: 4px;
+			}
+
 			textarea {
 				background-color: #F7F9FC;
 				width: 100%;
-				height: 80px;
+				height: 100px;
 				border-radius: 4px;
 				resize: none;
 			}
@@ -4479,6 +4547,26 @@ form {
 #nearby-page {
 	#header {
 
+		// &.show-on-scroll {
+		// 	position: fixed;
+		// 	top: 0;
+		// 	right: 0;
+		// 	left: 0;
+		// 	z-index: 1;
+
+		// 	// .text {
+		// 	// 	display: none;
+		// 	// }
+		// }
+
+		// transition: 0.3s 0s;
+		// z-index: 3;
+		// position: fixed;
+		// top: 0;
+		// right: 0;
+		// left: 0;
+		// z-index: 1;
+
 		.select {
 
 			select {
@@ -4890,7 +4978,7 @@ form {
 			grid-gap: 30px;
 			place-items: center;
 			text-align: center;
-			padding: 100px 15px;
+			padding: 30px 15px;
 
 			img {
 				height: 300px;
@@ -4914,7 +5002,7 @@ form {
 		}
 	}
 
-	#history {
+	#completed {
 		.orders {
 			display: grid;
 			grid-gap: 15px;
@@ -5010,135 +5098,7 @@ form {
 			grid-gap: 30px;
 			place-items: center;
 			text-align: center;
-			padding: 100px 15px;
-
-			img {
-				height: 300px;
-			}
-
-			.text {
-				display: grid;
-				grid-auto-flow: row;
-				grid-gap: 10px;
-			}
-		}
-
-		&.empty {
-			.orders {
-				display: none;
-			}
-
-			.empty-state {
-				display: grid;
-			}
-		}
-	}
-
-	#draft {
-		.orders {
-			display: grid;
-			grid-gap: 15px;
-
-			.order {
-				background: #ffffff;
-				box-shadow: 0px 2px 10px #e6e8ef;
-				border-radius: 4px;
-				overflow: hidden;
-				display: grid;
-				grid-template-columns: auto 1fr;
-				grid-gap: 10px;
-				grid-template-rows: auto;
-				grid-template-areas: "image details";
-				align-items: center;
-				// border-bottom: 1px solid #e6e8ef;
-
-				&:active {
-					opacity: 0.5;
-				}
-
-				.image {
-					display: grid;
-					width: 100px;
-					height: 100%;
-					border-radius: 4px 0 0 4px;
-					overflow: hidden;
-					padding-top: 100%;
-					position: relative;
-
-					&:active {
-						transform: scale(0.95);
-					}
-
-					img {
-						width: 100%;
-						height: 100%;
-						position: absolute;
-						object-fit: cover;
-					}
-				}
-
-				.details {
-					display: grid;
-					grid-auto-flow: row;
-					grid-gap: 10px;
-					padding: 10px;
-
-					.name {
-						line-height: 1.3;
-
-						&:active {
-							opacity: 0.5;
-						}
-					}
-
-					.address {
-						line-height: 1.3;
-						font-size: 13px;
-						display: grid;
-						grid-auto-flow: column;
-						grid-gap: 5px;
-						grid-template-columns: auto 1fr;
-						align-items: center;
-
-						img,
-						svg {
-							width: auto;
-							height: 12px;
-
-							path {
-								fill: #c5cee0;
-							}
-						}
-
-						span {
-							font-size: 13px;
-							line-height: 1.3;
-							color: #8f9bb3;
-							overflow: hidden;
-							text-overflow: ellipsis;
-							white-space: nowrap;
-						}
-					}
-
-					.items {
-						font-size: 13px;
-						line-height: 1.3;
-						color: #8f9bb3;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-					}
-				}
-			}
-		}
-
-		.empty-state {
-			display: none;
-			grid-auto-flow: row;
-			grid-gap: 30px;
-			place-items: center;
-			text-align: center;
-			padding: 100px 15px;
+			padding: 30px 15px;
 
 			img {
 				height: 300px;
@@ -5584,7 +5544,7 @@ form {
 				display: grid;
 				width: 70px;
 				height: 70px;
-				border-radius: 8px;
+				border-radius: 70px;
 				overflow: hidden;
 				grid-area: image;
 
@@ -5813,11 +5773,11 @@ form {
 
 			.setting {
 				display: grid;
-				grid-template-columns: 1fr auto;
+				// grid-template-columns: 1fr auto;
 				grid-gap: 10px;
 				align-items: center;
 				cursor: pointer;
-				padding: 20px;
+				padding: 0px;
 				background: #FFFFFF;
 				box-shadow: 0px 2px 10px rgba(85, 85, 85, 0.1);
 				border-radius: 8px;
@@ -5830,6 +5790,7 @@ form {
 					display: grid;
 					grid-gap: 10px;
 					grid-auto-flow: row;
+					position: relative;
 
 					.title {
 						font-size: 13px;
@@ -6101,19 +6062,15 @@ form {
 
 // ADDRESS PAGE
 #address-page {
+
 	#header {
-		padding: 50px 15px 30px 15px;
-		display: grid;
-		grid-gap: 30px;
-		grid-auto-flow: row;
-		align-items: center;
-		background-color: transparent;
 
 		.header-actions {
 			display: grid;
 			grid-gap: 15px;
 			grid-auto-flow: column;
 			align-items: center;
+			padding: 0;
 
 			.back {
 				padding: 5px 10px 5px 0;
@@ -6124,19 +6081,24 @@ form {
 					height: 12px;
 
 					path {
-						color: #222B45;
+						fill: #ffffff;
 					}
 				}
 			}
 
-			.save {
+			.edit {
 				padding: 5px 0px 5px 10px;
 				font-size: 13px;
 				line-height: 1.3;
 				font-weight: 500;
-				color: #fa6400;
+				color: #ffffff;
 				justify-self: right;
 			}
+		}
+
+		h1 {
+			color: #ffffff;
+			padding: 0;
 		}
 	}
 
@@ -6180,7 +6142,7 @@ form {
 
 
 	#delivery-address {
-		padding: 0px 15px 20px 15px;
+		padding: 20px 15px;
 		display: grid;
 		grid-gap: 20px;
 		grid-auto-flow: row;
@@ -6737,7 +6699,7 @@ form {
 					line-height: 1.3;
 					font-weight: 500;
 					text-align: center;
-					padding: 30px 15px;
+					padding: 20px 15px;
 					background: #FFFFFF;
 					box-shadow: 0px 2px 10px rgba(85, 85, 85, 0.1);
 					border-radius: 8px;
@@ -7027,10 +6989,11 @@ form {
 									width: 0px;
 									height: 100%;
 									border-left: 2px solid #fa6400;
-									z-index: -1;
+									z-index: 0;
 								}
 
 								.icon {
+									z-index: 1;
 									background-image: url(../images/icons/circle-check.svg);
 									background-repeat: no-repeat;
 									height: 20px;
@@ -7060,11 +7023,12 @@ form {
 									left: 9.5px;
 									width: 0px;
 									height: 100%;
-									border-left: 2px dashed #E4E9F2;
-									z-index: -1;
+									border-left: 2px dashed #fa6400;
+									z-index: 0;
 								}
 
 								.icon {
+									z-index: 1;
 									position: absolute;
 									height: 15px;
 									width: 15px;
@@ -7096,10 +7060,11 @@ form {
 									width: 0px;
 									height: 100%;
 									border-left: 2px dashed #E4E9F2;
-									z-index: -1;
+									z-index: 0;
 								}
 
 								.icon {
+									z-index: 1;
 									background-image: url(../images/icons/cirle-flag.svg);
 									background-repeat: no-repeat;
 									height: 20px;
@@ -7116,7 +7081,7 @@ form {
 								}
 
 								.time {
-									color: #222B45;
+									color: #ACB1C0;
 									font-weight: 500;
 									line-height: 1.3;
 								}
@@ -7281,6 +7246,8 @@ form {
 		display: grid;
 		grid-gap: 15px;
 		grid-auto-flow: row;
+		padding: 30px 15px;
+		background-color: #F7F9FC;
 
 		.header {
 			display: grid;
@@ -7295,39 +7262,30 @@ form {
 		}
 
 		.address {
-			padding: 5px;
-			border-radius: 4px;
 			display: grid;
+			grid-template-columns: 1fr auto;
 			grid-gap: 10px;
-			grid-auto-flow: column;
-			border: 1px solid #eaeaea;
-			grid-template-columns: auto 1fr;
 			align-items: center;
+			cursor: pointer;
+			padding: 0px;
+			background: #FFFFFF;
+			box-shadow: 0px 2px 10px rgba(85, 85, 85, 0.1);
+			border-radius: 8px;
 
-			.map {
-				width: 100px;
-				height: 100px;
-				overflow: hidden;
-				position: relative;
-				border-radius: 4px;
-
-				img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-				}
+			&:active {
+				opacity: 0.5;
 			}
 
 			.details {
 				display: grid;
 				grid-gap: 10px;
 				grid-auto-flow: row;
-				padding: 5px;
-				align-items: center;
+				padding: 20px;
 
 				.location-address {
 					font-size: 13px;
-					line-height: 1.3;
+					// line-height: 0px;
+					align-items: center;
 					color: #222B45;
 					display: grid;
 					grid-auto-flow: column;
@@ -7372,12 +7330,32 @@ form {
 					}
 				}
 			}
+
+			.radio {
+				margin: 0;
+				width: max-content;
+				cursor: pointer;
+				padding: 20px;
+			}
+
+			.chevron-icon {
+
+				img,
+				svg {
+					width: 7px;
+					height: auto;
+
+					path {
+						fill: #C5CEE0;
+					}
+				}
+			}
 		}
 	}
 
 	#delivery-details {
 		.heading {
-			background-color: #edf1f7;
+			background-color: #ffffff;
 			display: grid;
 			align-items: center;
 			padding: 10px 15px;
@@ -7401,6 +7379,7 @@ form {
 		.cart-items {
 			display: grid;
 			grid-gap: 10px;
+			background-color: #F7F9FC;
 
 			.cart-item {
 				display: grid;
@@ -7449,7 +7428,7 @@ form {
 		display: grid;
 		grid-gap: 5px;
 		grid-auto-flow: row;
-		padding-top: 0;
+		padding: 30px 15px;
 
 		.h-grid {
 

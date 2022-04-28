@@ -1,20 +1,3 @@
-<?php   
-require 'include/function4user.php';
-
- if (isset($_POST['submit'])) {
-  $result = forget($_POST);
-  if ($result === true) {
-  echo "string";
-   // header("Location: index.php");
-  } else {
-    $errors = $result;
-    // extract($errors);
-    
-  }
-
-}
- ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +20,7 @@ require 'include/function4user.php';
 
     <section id="header" class="constrain">
         <div class="navigation">
-            <a href="login" class="back">
+            <a href="login" onclick="history.back()" class="back link">
                 <img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
             </a>
         </div>
@@ -49,15 +32,16 @@ require 'include/function4user.php';
     </section>
 
     <section id="forgot-password-form" class="constrain">
-        <form method="post">
+        <form action="verification">
             <div class="form-row">
-                <div>
-                    <input type="email" placeholder="Email Address" name="email">
+                <div class="v-grid">
+                    <input type="text" placeholder="Email Address" name="email" id="email" required>
+                    <label for="email">Email Address</label>
                 </div>
             </div>
 
             <div class="form-row">
-                <button type="submit" name="submit" class="btn btn-primary">Next</button>
+                <button type="submit" class="btn btn-primary">Next</button>
             </div>
         </form>
     </section>
@@ -71,4 +55,5 @@ require 'include/function4user.php';
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/smooth-scroll.js"></script>
 </body>
+
 </html>

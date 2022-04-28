@@ -1,10 +1,10 @@
 <?php
 require 'include/function4user.php';
 if (isset($_SESSION['user_id'])) {
-	 $user_id = $_SESSION['user_id'];  
-  $result = fetch_user($user_id);
-   extract($result);
- // var_dump($result); 
+	$user_id = $_SESSION['user_id'];
+	$result = fetch_user($user_id);
+	extract($result);
+	// var_dump($result); 
 
 }
 ?>
@@ -35,14 +35,14 @@ if (isset($_SESSION['user_id'])) {
 
 <body id="address-page" class="container with-bottom-menu bg-offwhite">
 
-	<section id="header" class="constrain header-white">
-		<div class="header-actions">
-			<a href="profile" class="back link">
+	<section id="header" class="header-primary">
+		<div class="header-actions constrain">
+			<a href="#" onclick="history.back()" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
 			</a>
 		</div>
 
-		<h1>Address</h1>
+		<h1 class="constrain">Address</h1>
 	</section>
 
 	<section id="delivery-address">
@@ -50,37 +50,37 @@ if (isset($_SESSION['user_id'])) {
 
 			<!-- This is an address -->
 
-			  			<?php 
-                        $response = fetch_userAndAddress($user_id);
-                        $i = 1;
-                        if ($response) {
-                            foreach ($response as $row) {
-                             extract($row)
-                             //$depature_date = $row['depature_date'];
-                         ?>   
-			<div class="address">
-				<div class="details">
-					<h5>Home</h5>
-					<h5 class="location-address">
-						<img class="svg" src="assets/images/icons/map-pointer.svg" height="9px" alt="Store">
-						<span><?php echo $address.", ".$city.", ".$state; ?></span>
-					</h5>
-					<p class="name">
-						<img class="svg" src="assets/images/icons/person.svg" height="9px" alt="Store">
-						<span><?php echo $fullname; ?></span>
-					</p>
-					<p class="phone">
-						<img class="svg" src="assets/images/icons/telephone.svg" height="9px" alt="Store">
-						<span><?php echo $phone ?></span>
-					</p>
-				</div>
-				<label class="radio">
-					<input name="address" type="radio" checked>
-					<span class="check"></span>
-				</label>
-			</div>
+			<?php
+			$response = fetch_userAndAddress($user_id);
+			$i = 1;
+			if ($response) {
+				foreach ($response as $row) {
+					extract($row)
+					//$depature_date = $row['depature_date'];
+			?>
+					<div class="address">
+						<div class="details">
+							<h5 class="location-address">
+								<img class="svg" src="assets/images/icons/map-pointer.svg" height="9px" alt="Store">
+								<span><?php echo $address . ", " . $city . " " . $zip . ", " . $state . ", " . $country; ?></span>
+							</h5>
+							<p class="name">
+								<img class="svg" src="assets/images/icons/person.svg" height="9px" alt="Store">
+								<span><?php echo $fullname; ?></span>
+							</p>
+							<p class="phone">
+								<img class="svg" src="assets/images/icons/telephone.svg" height="9px" alt="Store">
+								<span><?php echo $phone ?></span>
+							</p>
+						</div>
+						<label class="radio">
+							<input name="address" type="radio" checked>
+							<span class="check"></span>
+						</label>
+					</div>
 
-		<?php }} ?>
+			<?php }
+			} ?>
 
 			<!-- This is an address -->
 			<!-- <div class="address">
@@ -107,7 +107,7 @@ if (isset($_SESSION['user_id'])) {
 
 			<!-- This is the button that adds a new address -->
 			<a href="add-new-address" class="btn">Add new Address</a>
-			
+
 		</form>
 	</section>
 

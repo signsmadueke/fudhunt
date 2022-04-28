@@ -77,7 +77,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -108,7 +110,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -138,7 +142,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -168,7 +174,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -198,7 +206,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -228,7 +238,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -258,7 +270,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -288,7 +302,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -318,7 +334,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -348,7 +366,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -378,7 +398,9 @@
 				<div class="text">
 					<div class="h-grid first-row">
 						<div class="v-grid">
-							<a href="#" class="name"><h5>Kichi Coffee & Drink</h5></a>
+							<a href="#" class="name">
+								<h5>Kichi Coffee & Drink</h5>
+							</a>
 							<p>
 								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
 								<span>76A Gwarimpa Estate, Abuja</span>
@@ -411,14 +433,14 @@
 	<script src="assets/js/smooth-scroll.js"></script>
 
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 
 			$('body.with-bottom-menu').css({
 				'padding-bottom': $('#bottom-menu').height() + "px"
-				
+
 			});
 		});
-
 	</script>
 </body>
+
 </html>

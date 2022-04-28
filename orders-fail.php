@@ -1,6 +1,6 @@
-<?php
+<?php 	
 require_once 'include/header.php';
-?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,6 @@ require_once 'include/header.php';
 <!-- 
 	I have 3 pages in one. They're fixed into tabs and they become active when the tab's button is clicked.
  -->
-
 <body id="orders-page" class="container with-bottom-menu bg-offwhite">
 	<section id="header" class="header-primary header-with-tab">
 		<div class="text constrain">
@@ -75,57 +74,36 @@ require_once 'include/header.php';
 	<!-- This is the Ongoing tab -->
 	<section id="ongoing" class="tab-content active">
 		<div class="orders constrain">
-			<a href="track-order" class="order">
-				<div class="image">
-					<img src="assets/images/products/11.jpg" height="95px">
-				</div>
-				<div class="details">
-					<h5 class="name">Chicken Croquette</h5>
-					<p class="id">
-						<span>ID:</span> 43e2116H
-					</p>
-					<p class="items">
-						1 Item
-					</p>
-					<p class="status dispatched">Dispatched</p>
-				</div>
-			</a>
-		</div>
 
-		<div class="orders constrain">
-			<a href="track-order" class="order">
-				<div class="image">
-					<img src="assets/images/products/86.jpg" height="95px">
-				</div>
-				<div class="details">
-					<h5 class="name">Turlu Omelet</h5>
-					<p class="id">
-						<span>ID:</span> 898fhd6G
-					</p>
-					<p class="items">
-						1 Item
-					</p>
-					<p class="status waiting">Waiting</p>
-				</div>
-			</a>
-		</div>
 
-		<div class="orders constrain">
+					<?php 
+                        $response = fetch_pending_order($user_id);
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+                         ?>  
+
+
 			<a href="track-order" class="order">
 				<div class="image">
-					<img src="assets/images/products/40.jpg" height="95px">
+					<!-- <img src="assets/images/restaurants/kichi.png" height="95px" alt="kichi"> -->
 				</div>
 				<div class="details">
-					<h5 class="name">Jeweled Rice</h5>
+					<h5 class="name"><?php echo $products; ?></h5>
 					<p class="id">
-						<span>ID:</span> 6hfs89sK
+						<span>ID:</span> 43e<?php echo $order_id; ?>	
 					</p>
 					<p class="items">
-						1 Item
+						<!-- 1 Item -->
 					</p>
-					<p class="status finished">Finished</p>
+					<!-- This is the status of the order, The statuses have different classes to change the colors -->
+					<p class="status waiting"><?php echo $delivery_status; ?></p>
 				</div>
 			</a>
+
+		<?php }} ?>
+
 		</div>
 
 
@@ -145,8 +123,32 @@ require_once 'include/header.php';
 
 	<!-- Tab content -->
 	<!-- This is the Completed tab -->
-	<section id="completed" class="tab-content empty">
+	<section id="completed" class="tab-content">
 		<div class="orders constrain">
+
+							<?php 
+                        $response = fetch_order($user_id);
+                        $i = 1;
+                        if ($response) {
+                            foreach ($response as $row) {
+                             extract($row);
+                         ?>   
+
+			<a href="track-order" class="order">
+				<div class="image">
+					<!-- <img src="assets/images/restaurants/kichi.png" height="95px" alt=""> -->
+				</div>
+				<div class="details">
+					<h5 class="name"><?php echo $products; ?></h5>
+					<p class="items">
+						<!-- 6 Items -->
+						<b>Delivery Status: </b> <?php echo $delivery_status; ?>
+					</p>
+					<p class="date"><?php echo $delivery_time; ?></p>
+				</div>
+			</a>
+
+				<?php }} ?>
 		</div>
 
 		<div class="empty-state constrain">

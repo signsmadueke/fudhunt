@@ -1,9 +1,9 @@
-<?php 
+<?php
 error_reporting(0);
 require_once 'include/header.php';
- ?>
+?>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,7 +33,7 @@ require_once 'include/header.php';
 				<h5>DELIVERING TO</h5>
 				<p>
 					<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Map Pointer">
-					<span><?php echo $address.', '.$city. ', '.$state.'.'; ?></span>
+					<span><?php echo $address . ', ' . $city . ' ' . $zip . ', ' . $state . ', ' . $country . '.'; ?></span>
 					<span></span>
 					<img class="svg" src="assets/images/icons/chevron-down.svg" height="10px" alt="Expand">
 				</p>
@@ -41,9 +41,13 @@ require_once 'include/header.php';
 
 			<div class="search-box constrain">
 				<form id="search-form" action="search-results" method="get" class="input-with-icon">
-					<input type="search" id="search-input" placeholder="What are you searching for?">
-					<button type="submit" class="btn"><img class="svg" src="assets/images/icons/search.svg"
-							height="10px" alt="Search"></button>
+					<div class="form-row">
+						<div class="v-grid">
+							<input type="search" name="search" id="search-input" placeholder="What are you searching for?" required>
+							<label for="search-input">What are you searching for?</label>
+						</div>
+					</div>
+					<button type="submit" class="btn"><img class="svg" src="assets/images/icons/search.svg" height="10px" alt="Search"></button>
 				</form>
 				<a href="#" class="btn close-search">
 					<!-- Whenever the search popup is open, the filter.svg icon hides and the "Exit" text shows instead just as it was done in the Figma design. It works with the .searching class on the <body> tag. -->
@@ -96,13 +100,11 @@ require_once 'include/header.php';
 					<h4>Suggestions</h4>
 					<a href="search-results" class="link link-primary">
 						<span>View all</span>
-						<img class="svg" src="assets/images/icons/double-chevron-right.svg" height="7px"
-							alt="Arrow Right">
+						<img class="svg" src="assets/images/icons/double-chevron-right.svg" height="7px" alt="Arrow Right">
 					</a>
 				</div>
 
-				<div class="slider"
-					data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10" }'>
+				<div class="slider" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10" }'>
 					<div class="slide">
 						<a href="#" class="product">
 							<img class="image" src="assets/images/products/5.jpg" height="100px" alt="Product Results">
@@ -184,8 +186,7 @@ require_once 'include/header.php';
 		</div>
 	</section>
 
-	<section id="discover-adverts" class="constrain"
-		data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10" }'>
+	<section id="discover-adverts" class="constrain" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10" }'>
 		<div class="advert">
 			<a href="#" class="details">
 				<div class="image">
@@ -229,33 +230,32 @@ require_once 'include/header.php';
 		</div>
 
 
-		
-
-		<div class="cuisines constrain"
-			data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
 
 
-		 				<?php 
-                        $response = fetch_cuisine();
-                        $i = 1;
-                        if ($response) {
-                            foreach ($response as $row) {
-                             extract($row);
-                             
-                         ?>   
+		<div class="cuisines constrain" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
 
 
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="Chad">
+			<?php
+			$response = fetch_cuisine();
+			$i = 1;
+			if ($response) {
+				foreach ($response as $row) {
+					extract($row);
+			?>
+
+
+					<div class="cuisine">
+						<a href="#" class="details">
+							<div class="image">
+								<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="Chad">
+							</div>
+							<h5 class="name"><?php echo $cuisine_name; ?></h5>
+						</a>
 					</div>
-					<h5 class="name"><?php echo $cuisine_name; ?></h5>
-				</a>
-			</div>
 
-		<?php }} ?>
-<!-- 
+			<?php }
+			} ?>
+			<!-- 
 			<div class="cuisine">
 				<a href="#" class="details">
 					<div class="image">
@@ -348,52 +348,52 @@ require_once 'include/header.php';
 			</a>
 		</div>
 
-		<div class="sales"
-			data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
+		<div class="sales" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
 
 			<!-- 
 				There's a ".bookmarked" class on the products that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon on top of the product image.
 			-->
 
-			<?php 
-                        $response = fetch_food();
-                        $i = 1;
-                        if ($response) {
-                            foreach ($response as $row) {
-                             extract($row);
+			<?php
+			$response = fetch_food();
+			$i = 1;
+			if ($response) {
+				foreach ($response as $row) {
+					extract($row);
 
-                             // var_dump($row);
-                             
-                         ?>  
+					// var_dump($row);
 
-			<div class="sale bookmarked">
-				<div class="details">
-					<a href="#" class="image">
-						<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
-						<button type="button" class="btn bookmark">
-							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-						</button>
-					</a>
-					<div class="text">
-						<a href="#" class="name"><?php echo $food_name; ?></a>
-						<p>
-							<span class="price">$<?php echo $food_prize; ?></span>
-							<div class="quantity">
-								
-								<a href="removecart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								</a>
-								<span class="value">0</span>
-								<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-								</a>
+			?>
+
+					<div class="sale bookmarked">
+						<div class="details">
+							<a href="#" class="image">
+								<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
+								<button type="button" class="btn bookmark">
+									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
+								</button>
+							</a>
+							<div class="text">
+								<a href="#" class="name"><?php echo $food_name; ?></a>
+								<p>
+									<span class="price">$<?php echo $food_prize; ?></span>
+								<div class="quantity">
+
+									<a href="removecart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									</a>
+									<span class="value">0</span>
+									<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+									</a>
+								</div>
+								</p>
 							</div>
-						</p>
+						</div>
 					</div>
-				</div>
-			</div>
 
-		<?php }} ?>
+			<?php }
+			} ?>
 
-<!-- 			<div class="sale">
+			<!-- 			<div class="sale">
 				<div class="details">
 					<a href="#" class="image">
 						<img src="assets/images/products/8.jpg" height="120px" alt="Fried Noodles and Chicken">
@@ -854,8 +854,7 @@ require_once 'include/header.php';
 			</a>
 		</div>
 
-		<div class="orders"
-			data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
+		<div class="orders" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
 			<!-- 
 				There's a ".bookmarked" class on the products that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon on top of the product image.
 			-->
@@ -871,11 +870,11 @@ require_once 'include/header.php';
 						<a href="#" class="name">Hot Salami Pizza</a>
 						<p>
 							<span class="price">$2.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 						</p>
 					</div>
 				</div>
@@ -893,11 +892,11 @@ require_once 'include/header.php';
 						<a href="#" class="name">Dungeness Crab Arancini</a>
 						<p>
 							<span class="price">$3.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 						</p>
 					</div>
 				</div>
@@ -915,11 +914,11 @@ require_once 'include/header.php';
 						<a href="#" class="name">Octopus</a>
 						<p>
 							<span class="price">$4.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 						</p>
 					</div>
 				</div>
@@ -937,11 +936,11 @@ require_once 'include/header.php';
 						<a href="#" class="name">Roasted Beet Salad</a>
 						<p>
 							<span class="price">$6.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 						</p>
 					</div>
 				</div>
@@ -959,11 +958,11 @@ require_once 'include/header.php';
 						<a href="#" class="name">Fried Cauliflower</a>
 						<p>
 							<span class="price">$3.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 						</p>
 					</div>
 				</div>
@@ -981,11 +980,11 @@ require_once 'include/header.php';
 						<a href="#" class="name">Carbonara Pizza</a>
 						<p>
 							<span class="price">$5.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
+						<div class="quantity">
+							<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+							<span class="value">0</span>
+							<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+						</div>
 						</p>
 					</div>
 				</div>
@@ -1005,8 +1004,7 @@ require_once 'include/header.php';
 		<!-- 
 			There's a ".bookmarked" class on the restaurants that are bookmarked by the user, Once the .bookmarked tag is added as a class it styles the bookmark icon on top of the restaurant logo.
 		-->
-		<div class="restaurants"
-			data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
+		<div class="restaurants" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "10", "initialIndex": 2 }'>
 			<a href="business-details" class="restaurant">
 				<div class="details">
 					<div class="image">

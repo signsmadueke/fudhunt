@@ -1,18 +1,16 @@
-<?php   
+<?php
 require 'include/function4user.php';
 
- if (isset($_POST['signin'])) {
-  $result = login_user($_POST);
-  if ($result === true) {
-   header("Location: index.php");
-  } else {
-    $errors = $result;
-    extract($errors);
-    
-  }
-
+if (isset($_POST['signin'])) {
+    $result = login_user($_POST);
+    if ($result === true) {
+        header("Location: index.php");
+    } else {
+        $errors = $result;
+        extract($errors);
+    }
 }
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,46 +37,49 @@ require 'include/function4user.php';
     </section>
 
     <section id="login-form" class="constrain">
-        <form  method="POST">
+        <form method="POST">
 
 
             <?php if (isset($_GET['reg'])) {
-              ?>
-            <p class="error">You have successfully Registered with us <p>
-            
-            <?php } ?>
-            <div class="form-row">
-                <div>
-                    <input type="text" placeholder="Email" name="email">
-     <?php  if (isset($errors['emailv'])) { ?> <p class="error"><?php echo $errors['emailv']; ?></p> <?php } ?>
-    <?php  if (isset($errors['emaila'])) { ?> <p class="error"><?php echo $errors['emaila']; ?></p> <?php } ?>
-    <?php  if (isset($errors['invalidl'])) { ?> <p class="error"><?php echo $errors['invalidl']; ?></p> <?php } ?>
+            ?>
+                <p class="error">You have successfully Registered with us
+                <p>
+
+                <?php } ?>
+                <div class="form-row">
+                    <div class="v-grid">
+                        <input type="text" name="email" id="email" required>
+                        <label for="email">Email Address</label>
+                        <?php if (isset($errors['emailv'])) { ?> <p class="error"><?php echo $errors['emailv']; ?></p> <?php } ?>
+                        <?php if (isset($errors['emaila'])) { ?> <p class="error"><?php echo $errors['emaila']; ?></p> <?php } ?>
+                        <?php if (isset($errors['invalidl'])) { ?> <p class="error"><?php echo $errors['invalidl']; ?></p> <?php } ?>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-row">
-                <div class="v-grid">
-                    <input type="password" placeholder="Password" name="password">
-     <?php  if (isset($errors['password'])) { ?> <p class="error"><?php echo $errors['password']; ?></p> <?php } ?>
-                    <!-- This is the error text, it displays form errors. -->
-                    <!-- <p class="error">Password is incorrect.</p> -->
+                <div class="form-row">
+                    <div class="v-grid">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">Password</label>
+                        <?php if (isset($errors['password'])) { ?> <p class="error"><?php echo $errors['password']; ?></p> <?php } ?>
+                        <!-- This is the error text, it displays form errors. -->
+                        <!-- <p class="error">Password is incorrect.</p> -->
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-row reset-password-link">
-                <a href="forgot-password.php" class="link link-secondary">Forgot password!</a>
-            </div>
+                <div class="form-row reset-password-link">
+                    <a href="forgot-password" class="link link-secondary">Forgot password!</a>
+                </div>
 
-            <div></div>
+                <div></div>
 
-            <div class="form-row">
-                <button type="submit" class="btn btn-primary" name="signin">Sign In</button>
-            </div>
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary" name="signin">Sign In</button>
+                </div>
         </form>
     </section>
 
     <section id="create-account-link" class="constrain">
-        <p>You don’t have an account? <a href="create-new-account" class="link link-primary">Sign up</a></p>
+        <p>You don’t have an account? <a href="register" class="link link-primary">Sign up</a></p>
     </section>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
@@ -90,4 +91,5 @@ require 'include/function4user.php';
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/smooth-scroll.js"></script>
 </body>
+
 </html>

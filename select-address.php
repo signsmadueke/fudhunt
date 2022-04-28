@@ -19,10 +19,10 @@
 <body id="delivery-location-page" class="container bg-offwhite with-bottom-menu">
 	<section id="header" class="constrain header-white">
 		<div class="navigation">
-            <a href="address" class="back">
-                <img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
-            </a>
-        </div>	
+			<a href="#" onclick="history.back()" class="back link">
+				<img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
+			</a>
+		</div>
 		<div class="text">
 			<h1 class="name">Delivery Location</h1>
 		</div>
@@ -86,17 +86,17 @@
 		var btn = document.getElementsByClassName("add-to-cart");
 		var span = document.getElementsByClassName("close")[0];
 
-		$(".add-to-cart").click(function () {
+		$(".add-to-cart").click(function() {
 			var $modal = $('#add-address-popup');
 			$modal.addClass('active');
 		});
 
-		$(".close-popup").click(function () {
+		$(".close-popup").click(function() {
 			var $modal = $('#add-address-popup');
 			$modal.toggleClass('active');
 		});
 
-		window.onclick = function (event) {
+		window.onclick = function(event) {
 			if (event.target == modal) {
 				var $modal = $('#add-address-popup');
 				$modal.removeClass('active');

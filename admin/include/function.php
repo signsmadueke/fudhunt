@@ -3,6 +3,11 @@ ob_start();
 session_start();
 
 // define("HOST", "localhost");
+// define("USERNAME", "aplusvgy_escrow2");
+// define("PASSWORD", "aplusvgy_escrow2");
+// define("DBNAME", "aplusvgy_escrow2");
+
+// define("HOST", "localhost");
 // define("USERNAME", "root");
 // define("PASSWORD", "");
 // define("DBNAME", "fudhunt");
@@ -12,7 +17,7 @@ define('USER', 'root');
 define('PASSWORD', 'root');
 define('DATABASE', 'fudhunt');
 
-$link = mysqli_connect(HOST, USERNAME, PASSWORD, DBNAME);
+$link = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $conn = $link;
 
 if ($link) {

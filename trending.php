@@ -1,11 +1,11 @@
 <?php
 require 'include/function4user.php';
 if (isset($_SESSION['user_id'])) {
-	 $user_id = $_SESSION['user_id'];  
-  $result = fetch_user($user_id);
-   extract($result);
+	$user_id = $_SESSION['user_id'];
+	$result = fetch_user($user_id);
+	extract($result);
 
- // var_dump($result); 
+	// var_dump($result); 
 
 }
 ?>
@@ -84,42 +84,42 @@ if (isset($_SESSION['user_id'])) {
 	<section id="foods" class="tab-content nearby-businesses active">
 		<div class="foods constrain">
 
-						<?php 
-                        $response = fetch_food();
-                        $i = 1;
-                        if ($response) {
-                            foreach ($response as $row) {
-                             extract($row)
-                             //$depature_date = $row['depature_date'];
-                         ?> 
-			
-			<div class="product horizontal">
-				<a href="#" class="image">
-					<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="#">
-				</a>
+			<?php
+			$response = fetch_food();
+			$i = 1;
+			if ($response) {
+				foreach ($response as $row) {
+					extract($row)
+			?>
 
-				<div class="details">
+					<div class="product horizontal">
+						<a href="#" class="image">
+							<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="#">
+						</a>
 
-					<a href="#" class="name">
-						<h5><?php echo $food_name; ?></h5>
-					</a>
+						<div class="details">
 
-					<button class="btn bookmark">
-						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-					</button>
+							<a href="#" class="name">
+								<h5><?php echo $food_name; ?></h5>
+							</a>
 
-					<h5 class="price">$<?php echo $food_prize; ?></h5>
-					<div class="quantity">
-						<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-						<span class="value">0</span>
-						<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+							<button class="btn bookmark">
+								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
+							</button>
+
+							<h5 class="price">$<?php echo $food_prize; ?></h5>
+							<div class="quantity">
+								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+								<span class="value">0</span>
+								<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
 								</a>
+							</div>
+
+						</div>
 					</div>
 
-				</div>
-			</div>
-
-		<?php 	}} ?>
+			<?php 	}
+			} ?>
 
 			<!-- <div class="product horizontal bookmarked">
 				<a href="#" class="image">
@@ -152,44 +152,45 @@ if (isset($_SESSION['user_id'])) {
 	<!-- This is the Restaurants tab -->
 	<section id="restaurants" class="tab-content nearby-businesses">
 		<div class="businesses constrain">
-			
-			<?php 
-                        $response = fetch_restaurant();
-                        $i = 1;
-                        if ($response) {
-                            foreach ($response as $row) {
-                             extract($row)
-                             //$depature_date = $row['depature_date'];
-                         ?> 
 
-			<div class="business bookmarked">
-				<a href="business-details.php?restaurant_id=<?php echo $restaurant_id; ?>" class="image">
-					<img src="admin/<?php echo $restaurant_pix; ?>" height="85px" alt="kichi">
-				</a>
-				<div class="details">
-					<a href="business-details" class="name">
-						<h5><?php echo $restaurant_name ?></h5>
-					</a>
-					<button class="btn bookmark">
-						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-					</button>
-					<p class="address">
-						<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
-						<span><?php $restaurant_address; ?></span>
-					</p>
-					
-					<div class="bottom">
-						<p class="reviews">
-							<img class="svg icon" alt="" src="assets/images/icons/star.svg">
-							<b>4.<?php 	echo $i++; ?></b>
-							<span>(125<?php 	echo $i++; ?>)</span>
-						</p>
+			<?php
+			$response = fetch_restaurant();
+			$i = 1;
+			if ($response) {
+				foreach ($response as $row) {
+					extract($row)
+					//$depature_date = $row['depature_date'];
+			?>
 
-						
+					<div class="business">
+						<a href="business-details.php?restaurant_id=<?php echo $restaurant_id; ?>" class="image">
+							<img src="admin/<?php echo $restaurant_pix; ?>" height="85px" alt="kichi">
+						</a>
+						<div class="details">
+							<a href="business-details" class="name">
+								<h5><?php echo $restaurant_name; ?></h5>
+							</a>
+							<button class="btn bookmark">
+								<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
+							</button>
+							<p class="address">
+								<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
+								<span><?php echo $restaurant_address; ?></span>
+							</p>
+
+							<div class="bottom">
+								<p class="reviews">
+									<img class="svg icon" alt="" src="assets/images/icons/star.svg">
+									<b>4.<?php echo $i++; ?></b>
+									<span>(125<?php echo $i++; ?>)</span>
+								</p>
+
+
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		<?php }} ?>
+			<?php }
+			} ?>
 
 			<!-- <div class="business">
 				<a href="business-details" class="image">
@@ -226,30 +227,31 @@ if (isset($_SESSION['user_id'])) {
 	<!-- This is the Cuisines tab -->
 	<section id="cuisines" class="tab-content nearby-businesses">
 		<div class="businesses constrain">
-		<div class="cuisines ">
+			<div class="cuisines ">
 
-						<?php 
-                        $response = fetch_cuisine($cuisine_id);
-                        $i = 1;
-                        if ($response) {
-                            foreach ($response as $row) {
-                             extract($row);
-                             // var_dump($row);
+				<?php
+				$response = fetch_cuisine($cuisine_id);
+				$i = 1;
+				if ($response) {
+					foreach ($response as $row) {
+						extract($row);
+						// var_dump($row);
 
-                         ?>
+				?>
 
-			<div class="cuisine">
-				<a href="cuisine.php?cuisine_id=<?php echo $cuisine_id; ?>" class="details">
-					<div class="image">
-						<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="All">
-					</div>
-					<h5 class="name"><?php echo $cuisine_name; ?></h5>
-				</a>
-			</div>
+						<div class="cuisine">
+							<a href="cuisine.php?cuisine_id=<?php echo $cuisine_id; ?>" class="details">
+								<div class="image">
+									<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="All">
+								</div>
+								<h5 class="name"><?php echo $cuisine_name; ?></h5>
+							</a>
+						</div>
 
-		<?php }} ?>
+				<?php }
+				} ?>
 
-			<!-- <div class="cuisine">
+				<!-- <div class="cuisine">
 				<a href="cuisine" class="details">
 					<div class="image">
 						<img src="assets/images/cuisines/japanese.jpeg" height="50px" alt="Food">
@@ -321,7 +323,7 @@ if (isset($_SESSION['user_id'])) {
 				</a>
 			</div>
  -->
-			<!-- <div class="cuisine">
+				<!-- <div class="cuisine">
 				<a href="cuisine" class="details">
 					<div class="image">
 						<img src="assets/images/cuisines/spanish.jpeg" height="50px" alt="Fashion">
@@ -330,7 +332,7 @@ if (isset($_SESSION['user_id'])) {
 				</a>
 			</div> -->
 
-		</div>
+			</div>
 	</section>
 
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>

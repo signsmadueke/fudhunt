@@ -17,14 +17,14 @@
 </head>
 
 <body id="rating-page" class="container bg-offwhite">
-<section id="header" class="header-primary">
+	<section id="header" class="header-primary">
 		<div class="header-actions constrain">
-			<a href="index" class="back link">
+			<a href="#" onclick="history.back()" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
 			</a>
 		</div>
 
-		<h1 class="constrain">Rating</h1>
+		<h1 class="constrain">Rate Restaurant</h1>
 	</section>
 
 	<section id="rating">

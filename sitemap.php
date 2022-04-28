@@ -329,7 +329,7 @@
 				document.getElementById(id) :
 				id;
 
-			el.on = function (event, fn) {
+			el.on = function(event, fn) {
 				if ('content loaded' == event) {
 					event = window.attachEvent ? "load" : "DOMContentLoaded";
 				}
@@ -338,29 +338,29 @@
 					el.attachEvent("on" + event, fn);
 			};
 
-			el.all = function (selector) {
+			el.all = function(selector) {
 				return $(el.querySelectorAll(selector));
 			};
 
-			el.each = function (fn) {
+			el.each = function(fn) {
 				for (var i = 0, len = el.length; i < len; ++i) {
 					fn($(el[i]), i);
 				}
 			};
 
-			el.getClasses = function () {
+			el.getClasses = function() {
 				return this.getAttribute('class').split(/\s+/);
 			};
 
-			el.addClass = function (name) {
+			el.addClass = function(name) {
 				var classes = this.getAttribute('class');
 				el.setAttribute('class', classes ?
 					classes + ' ' + name :
 					name);
 			};
 
-			el.removeClass = function (name) {
-				var classes = this.getClasses().filter(function (curr) {
+			el.removeClass = function(name) {
+				var classes = this.getClasses().filter(function(curr) {
 					return curr != name;
 				});
 				this.setAttribute('class', classes.join(' '));
@@ -373,7 +373,7 @@
 			var str = $('search').value.toLowerCase();
 			var links = $('files').all('a');
 
-			links.each(function (link) {
+			links.each(function(link) {
 				var text = link.textContent.toLowerCase();
 
 				if ('..' == text) return;
@@ -385,7 +385,7 @@
 			});
 		}
 
-		$(window).on('content loaded', function () {
+		$(window).on('content loaded', function() {
 			$('search').on('keyup', search);
 		});
 	</script>
@@ -395,73 +395,29 @@
 	<input id="search" type="text" placeholder="Search" autocomplete="off">
 	<div id="wrapper">
 		<ul id="files" class="view-tiles">
-			<li><a href="http://zero30.netlify.app/add-new-address" class="icon icon icon-html icon-text-html"
-					title="add-new-address"><span class="name">add-new-address.html</span><span
-						class="size">3548</span><span class="date">12/4/2020 1:36:19 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/address" class="icon icon icon-html icon-text-html"
-					title="address"><span class="name">address.html</span><span class="size">5151</span><span
-						class="date">12/4/2020 1:36:25 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/business-details" class="icon icon icon-html icon-text-html"
-					title="business-details"><span class="name">business-details.html</span><span
-						class="size">26944</span><span class="date">12/6/2020 11:10:23 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/confirm-order" class="icon icon icon-html icon-text-html"
-					title="confirm-order"><span class="name">confirm-order.html</span><span
-						class="size">12544</span><span class="date">12/7/2020 12:28:36 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/create-new-account" class="icon icon icon-html icon-text-html"
-					title="create-new-account"><span class="name">create-new-account.html</span><span
-						class="size">3027</span><span class="date">12/4/2020 1:36:37 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/discover" class="icon icon icon-html icon-text-html"
-					title="discover"><span class="name">discover.html</span><span class="size">27353</span><span
-						class="date">12/6/2020 7:09:51 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/edit-profile" class="icon icon icon-html icon-text-html"
-					title="edit-profile"><span class="name">edit-profile.html</span><span
-						class="size">5306</span><span class="date">12/5/2020 1:28:37 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/favourites" class="icon icon icon-html icon-text-html"
-					title="favourites"><span class="name">favourites.html</span><span
-						class="size">16720</span><span class="date">12/5/2020 2:33:17 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/forgot-password" class="icon icon icon-html icon-text-html"
-					title="forgot-password"><span class="name">forgot-password.html</span><span
-						class="size">2169</span><span class="date">12/4/2020 1:37:03 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/index" class="icon icon icon-html icon-text-html"
-					title="index"><span class="name">index.html</span><span class="size">3470</span><span
-						class="date">12/7/2020 12:34:51 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/login" class="icon icon icon-html icon-text-html"
-					title="login"><span class="name">login.html</span><span class="size">2637</span><span
-						class="date">12/4/2020 1:37:16
+			<li><a href="http://zero30.netlify.app/add-new-address" class="icon icon icon-html icon-text-html" title="add-new-address"><span class="name">add-new-address.html</span><span class="size">3548</span><span class="date">12/4/2020 1:36:19 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/address" class="icon icon icon-html icon-text-html" title="address"><span class="name">address.html</span><span class="size">5151</span><span class="date">12/4/2020 1:36:25 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/business-details" class="icon icon icon-html icon-text-html" title="business-details"><span class="name">business-details.html</span><span class="size">26944</span><span class="date">12/6/2020 11:10:23 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/confirm-order" class="icon icon icon-html icon-text-html" title="confirm-order"><span class="name">confirm-order.html</span><span class="size">12544</span><span class="date">12/7/2020 12:28:36 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/register" class="icon icon icon-html icon-text-html" title="register"><span class="name">register.html</span><span class="size">3027</span><span class="date">12/4/2020 1:36:37 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/discover" class="icon icon icon-html icon-text-html" title="discover"><span class="name">discover.html</span><span class="size">27353</span><span class="date">12/6/2020 7:09:51 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/edit-profile" class="icon icon icon-html icon-text-html" title="edit-profile"><span class="name">edit-profile.html</span><span class="size">5306</span><span class="date">12/5/2020 1:28:37 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/favourites" class="icon icon icon-html icon-text-html" title="favourites"><span class="name">favourites.html</span><span class="size">16720</span><span class="date">12/5/2020 2:33:17 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/forgot-password" class="icon icon icon-html icon-text-html" title="forgot-password"><span class="name">forgot-password.html</span><span class="size">2169</span><span class="date">12/4/2020 1:37:03 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/index" class="icon icon icon-html icon-text-html" title="index"><span class="name">index.html</span><span class="size">3470</span><span class="date">12/7/2020 12:34:51 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/login" class="icon icon icon-html icon-text-html" title="login"><span class="name">login.html</span><span class="size">2637</span><span class="date">12/4/2020 1:37:16
 						PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/nearby" class="icon icon icon-html icon-text-html"
-					title="nearby"><span class="name">nearby.html</span><span class="size">45252</span><span
-						class="date">12/5/2020 2:13:35 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/order-information" class="icon icon icon-html icon-text-html"
-					title="order-information"><span class="name">order-information.html</span><span
-						class="size">6665</span><span class="date">12/7/2020 12:28:44 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/orders" class="icon icon icon-html icon-text-html"
-					title="orders"><span class="name">orders.html</span><span class="size">11224</span><span
-						class="date">12/5/2020 2:03:51 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/payment-methods" class="icon icon icon-html icon-text-html"
-					title="payment-methods"><span class="name">payment-methods.html</span><span
-						class="size">6139</span><span class="date">12/6/2020 6:16:45 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/profile" class="icon icon icon-html icon-text-html"
-					title="profile"><span class="name">profile.html</span><span class="size">6507</span><span
-						class="date">12/4/2020 1:37:41 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/rating" class="icon icon icon-html icon-text-html"
-					title="rating"><span class="name">rating.html</span><span class="size">3611</span><span
-						class="date">12/7/2020 12:17:11 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/reset-password" class="icon icon icon-html icon-text-html"
-					title="reset-password"><span class="name">reset-password.html</span><span
-						class="size">2356</span><span class="date">12/4/2020 1:37:50 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/search-results" class="icon icon icon-html icon-text-html"
-					title="search-results"><span class="name">search-results.html</span><span
-						class="size">13236</span><span class="date">12/5/2020 11:48:18 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/select-address" class="icon icon icon-html icon-text-html"
-					title="select-address"><span class="name">select-address.html</span><span
-						class="size">2837</span><span class="date">12/4/2020 1:38:01 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/track-order" class="icon icon icon-html icon-text-html"
-					title="track-order"><span class="name">track-order.html</span><span
-						class="size">8097</span><span class="date">12/5/2020 4:18:13 PM</span></a></li>
-			<li><a href="http://zero30.netlify.app/verification" class="icon icon icon-html icon-text-html"
-					title="verification"><span class="name">verification.html</span><span
-						class="size">3837</span><span class="date">12/4/2020 1:38:10 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/nearby" class="icon icon icon-html icon-text-html" title="nearby"><span class="name">nearby.html</span><span class="size">45252</span><span class="date">12/5/2020 2:13:35 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/order-information" class="icon icon icon-html icon-text-html" title="order-information"><span class="name">order-information.html</span><span class="size">6665</span><span class="date">12/7/2020 12:28:44 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/orders" class="icon icon icon-html icon-text-html" title="orders"><span class="name">orders.html</span><span class="size">11224</span><span class="date">12/5/2020 2:03:51 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/payment-methods" class="icon icon icon-html icon-text-html" title="payment-methods"><span class="name">payment-methods.html</span><span class="size">6139</span><span class="date">12/6/2020 6:16:45 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/profile" class="icon icon icon-html icon-text-html" title="profile"><span class="name">profile.html</span><span class="size">6507</span><span class="date">12/4/2020 1:37:41 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/rating" class="icon icon icon-html icon-text-html" title="rating"><span class="name">rating.html</span><span class="size">3611</span><span class="date">12/7/2020 12:17:11 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/reset-password" class="icon icon icon-html icon-text-html" title="reset-password"><span class="name">reset-password.html</span><span class="size">2356</span><span class="date">12/4/2020 1:37:50 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/search-results" class="icon icon icon-html icon-text-html" title="search-results"><span class="name">search-results.html</span><span class="size">13236</span><span class="date">12/5/2020 11:48:18 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/select-address" class="icon icon icon-html icon-text-html" title="select-address"><span class="name">select-address.html</span><span class="size">2837</span><span class="date">12/4/2020 1:38:01 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/track-order" class="icon icon icon-html icon-text-html" title="track-order"><span class="name">track-order.html</span><span class="size">8097</span><span class="date">12/5/2020 4:18:13 PM</span></a></li>
+			<li><a href="http://zero30.netlify.app/verification" class="icon icon icon-html icon-text-html" title="verification"><span class="name">verification.html</span><span class="size">3837</span><span class="date">12/4/2020 1:38:10 PM</span></a></li>
 		</ul>
 	</div>
 

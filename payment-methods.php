@@ -19,7 +19,7 @@
 <body id="payment-methods-page" class="container with-bottom-menu bg-offwhite">
 	<section id="header" class="header-primary">
 		<div class="header-actions constrain">
-			<a href="profile" class="back link">
+			<a href="#" onclick="history.back()" class="back link">
 				<img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
 			</a>
 		</div>
@@ -61,65 +61,50 @@
 					<span class="check"></span>
 				</label>
 			</div>
-
-			<div class="card visa">
-				<div class="image">
-					<img class="svg" width="40px" alt="Card Image">
-				</div>
-				<div class="details">
-					<h5 class="number">**** **** *894</h5>
-					<p class="date">Jun 10, 2020</p>
-				</div>
-				<label class="radio">
-					<input name="card" id="mastercard" type="radio">
-					<span class="check"></span>
-				</label>
-			</div>
 		</form>
 	</section>
 
 	<section id="new-payment-method">
 
 		<h2 class="constrain">Add Payment Methods</h2>
-		
+
 		<form action="" id="credit-card-info" class="constrain">
 			<div class="form-row">
 				<!-- If the Visa Card option is selected, add a ".visa" class to the div below.
 				If it's a Mastercard, add a ".mastercard" class instead.
 				The classes are in charge of switching the image. (There's no "src" attribute. The classes are changing the source from the CSS.)  -->
 				<div class="select visa">
-					<div class="image">
-						<!-- This is the card image that changes when the class changes. -->
-						<img class="svg" height="15px">
-					</div>
 					<select name="card-type" id="card-type">
 						<option value="visa">Visa Card</option>
 						<option value="mastercard">Mastercard Card</option>
 					</select>
-					<div class="chevron-icon">
-						<img class="svg" src="assets/images/icons/chevron-down.svg" height="7px" alt="Select">
+					<label for="card-type">Card Type</label>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div>
+					<div class="v-grid">
+						<input class="card-number" maxlength="19" name="credit-number" id="credit-number" pattern="\d*" placeholder="Card Number" type="tel" required />
+						<label for="credit-number">Card Number</label>
 					</div>
 				</div>
 			</div>
 
 			<div class="form-row">
-				<div>
-					<input class="card-number" maxlength="19" name="credit-number" pattern="\d*" placeholder="Card Number" type="tel" />
+				<div class="v-grid">
+					<input class="card-expiry-date" maxlength="7" name="credit-expires" id="credit-expires" pattern="\d*" placeholder="MM / YY" type="tel" required />
+					<label for="credit-expires">MM / YY</label>
+				</div>
+
+				<div class="v-grid">
+					<input class="cvv" maxlength="4" name="credit-cvc" id="credit-cvc" pattern="\d*" placeholder="CVV" type="tel" required />
+					<label for="credit-cvc">CVV</label>
 				</div>
 			</div>
 
 			<div class="form-row">
-				<div>
-					<input class="card-expiry-date" maxlength="7" name="credit-expires" pattern="\d*" placeholder="MM / YY" type="tel" />
-				</div>
-
-				<div>
-					<input class="cvv" maxlength="4" name="credit-cvc" pattern="\d*" placeholder="CVV" type="tel" />
-				</div>
-			</div>
-
-			<div class="form-row">
-				<button type="submit" class="btn btn-primary">Complete</button>
+				<button type="submit" class="btn btn-primary">Add Payment Method</button>
 			</div>
 		</form>
 	</section>
@@ -185,7 +170,7 @@
 			evt.currentTarget.className += " active";
 		}
 
-		$(document).ready(function () {
+		$(document).ready(function() {
 
 			// Set up formatting for Credit Card fields
 			$('#credit-card-info .card-number').formatCardNumber();

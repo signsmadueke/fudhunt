@@ -20,8 +20,7 @@
 <body class="bg-primary container">
 
     <!-- Top section of the Onboarding page (the white part) -->
-    <section id="onboardings" class="constrain"
-        data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "0", "LazyLoad": true }'>
+    <section id="onboardings" class="constrain" data-flickity='{ "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": false, "autoPlay": "10000", "pauseAutoPlayOnHover": true, "dragThreshold": "0", "LazyLoad": true }'>
         <div class="onboarding">
             <div class="image">
                 <img src="assets/images/onboarding/1.svg" width="200px" alt="Onboarding Image">
@@ -80,8 +79,8 @@
     <!-- Bottom section of the Onboarding page (the orange part) -->
     <section id="onboarding-cta" class="constrain">
         <div class="row">
-            <a href="create-new-account" class="btn btn-outline-white">Sign Up</a>
-            <a href="login" class="btn btn-white text-primary">Sign In</a>
+            <a href="login" class="btn btn-outline-white">Login</a>
+            <a href="register" class="btn btn-white text-primary">Register</a>
         </div>
     </section>
     <!-- Bottom section of the Onboarding page (the orange part) -->

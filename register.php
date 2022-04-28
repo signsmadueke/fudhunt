@@ -1,3 +1,18 @@
+<?php
+require 'include/function4user.php';
+if (isset($_POST['submit'])) {
+    $result = register_user($_POST);
+
+    if ($result === true) {
+        header("Location: login.php?reg=true");
+    } else {
+        $errors = $result;
+        extract($errors);
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="author" content="Fudhunt">
-    <meta name="description" content="Add New Address">
+    <meta name="description" content="Create New Account">
     <meta name="robots" content="index, follow">
 
     <!-- Stylesheets -->
@@ -13,23 +28,88 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/flickity.css">
 
-    <title>Add New Address</title>
+    <title>Create New Account</title>
 </head>
 
+<body id="register-page" class="bg-dark container">
 
-<body id="add-new-address" class="bg-offwhite container with-bottom-menu">
-
-    <section id="header" class="header-primary">
-        <div class="header-actions constrain">
+    <section id="header" class="header-with-tab">
+        <div class="navigation constrain">
             <a href="#" onclick="history.back()" class="back link">
-                <img class="svg" src="assets/images/icons/arrow-left.svg" width="18px" alt="Go back">
+                <img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
             </a>
         </div>
-        <h1 class="constrain">Add New Address</h1>
+        <div class="text constrain">
+            <h1 class="title">Register New Account</h1>
+            <p>Register a Fudhunt account with your personal and location information.</p>
+        </div>
+
+        <div id="tabs" class="constrain">
+            <button class="tab active" onclick="openTab(event, 'personal')"><span>Personal</span></button>
+            <button class="tab" onclick="openTab(event, 'location')"><span>Location</span></button>
+        </div>
     </section>
 
-    <section id="add-new-address-form" class="constrain">
-        <form action="">
+
+    <form action="" method="POST">
+
+
+        <section id="personal" class="tab-content constrain active">
+            <div class="form-row">
+                <div class="v-grid">
+                    <input type="text" placeholder="Full name" name="fullname" id="fullname" required>
+                    <label for="fullname">Full Name</label>
+                    <?php if (isset($errors['fullname'])) { ?> <p class="error"><?php echo $errors['fullname']; ?></p> <?php } ?>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="v-grid">
+                    <input type="text" placeholder="Email" name="email" id="email" required>
+                    <label for="email">Email Address</label>
+                    <?php if (isset($errors['email'])) { ?> <p class="error"><?php echo $errors['email']; ?></p> <?php } ?>
+                    <?php if (isset($errors['emaild'])) { ?> <p class="error"><?php echo $errors['emaild']; ?></p> <?php } ?>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="v-grid">
+                    <input type="text" placeholder="Phone Number" name="phone" id="phone" required>
+                    <label for="phone">Phone Number</label>
+                    <?php if (isset($errors['phone'])) { ?> <p class="error"><?php echo $errors['phone']; ?></p> <?php } ?>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="v-grid">
+                    <input type="password" placeholder="Password" name="password" id="password" required>
+                    <label for="password">Password</label>
+                    <?php if (isset($errors['password'])) { ?> <p class="error"><?php echo $errors['password']; ?></p> <?php } ?>
+                    <?php if (isset($errors['passwordd'])) { ?> <p class="error"><?php echo $errors['passwordd']; ?></p> <?php } ?>
+                    <!-- This is the error text, it displays form errors. -->
+                    <!-- <p class="error">Password is incorrect.</p> -->
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="v-grid">
+                    <input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" required>
+                    <label for="cpassword">Confirm Password</label>
+                    <?php if (isset($errors['cpassword'])) { ?> <p class="error"><?php echo $errors['cpassword']; ?></p> <?php } ?>
+                    <!-- This is the error text, it displays form errors. -->
+                    <!-- <p class="error">Password doesn't match.</p> -->
+                </div>
+            </div>
+
+            <div></div>
+
+            <div class="form-row">
+                <button class="btn btn-primary" onclick="openTab(event, 'location')">Continue</button>
+            </div>
+        </section>
+
+        <section id="location" class="tab-content constrain">
+
             <div class="form-row">
                 <div class="v-grid">
                     <select name="country" id="country" required>
@@ -237,7 +317,7 @@
             <div class="form-row">
                 <div class="v-grid">
                     <input type="text" placeholder="Address" name="address" id="address" required>
-                    <label for="email">Address</label>
+                    <label for="address">Address</label>
                     <?php if (isset($errors['address'])) { ?> <p class="error"><?php echo $errors['address']; ?></p> <?php } ?>
                 </div>
             </div>
@@ -272,42 +352,15 @@
                 </div>
             </div>
 
+            <div></div>
+
             <!-- This button submits this form. -->
             <div class="form-row">
-                <button type="submit" class="btn btn-primary">Add Address</button>
+                <button type="submit" name="submit" class="btn btn-primary">Register Account</button>
             </div>
-        </form>
-    </section>
+        </section>
 
-    <!-- This is that menu at the bottom of every page -->
-    <section id="bottom-menu">
-        <div class="menu-links constrain">
-            <a href="index" style="padding: 20px 10px;" class="link link-secondary">
-                <img class="svg" src="assets/images/icons/menu/home.svg" height="20px" alt="Home">
-                <span>Home</span>
-            </a>
-
-            <a href="trending" style="padding: 20px 10px;" class="link link-secondary">
-                <img class="svg" src="assets/images/icons/menu/trending.svg" height="20px" alt="Trending">
-                <span>Trending</span>
-            </a>
-
-            <a href="cart" style="padding: 15px;" class="link link-secondary">
-                <img class="svg" src="assets/images/icons/menu/cart.svg" height="20px" width="20px" alt="Cart">
-            </a>
-
-            <a href="orders" style="padding: 20px 10px;" class="link link-secondary">
-                <img class="svg" src="assets/images/icons/menu/orders.svg" height="20px" alt="Orders">
-                <span>Orders</span>
-            </a>
-
-            <a href="profile" style="padding: 20px 10px;" class="link link-secondary active">
-                <img class="svg" src="assets/images/icons/menu/profile.svg" height="20px" alt="Profile">
-                <span>Profile</span>
-            </a>
-        </div>
-    </section>
-
+    </form>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script> -->

@@ -1836,7 +1836,7 @@ body.dark #navigation nav a:hover {
   grid-gap: 20px;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas: "contact	contact	payments" "borderline	borderline	borderline" "legal	copyright	social";
+      grid-template-areas: "contact	contact	payments" "borderline	borderline	borderline" "legal	copyright	social";
   background-repeat: no-repeat;
   background-image: url(../images/icons/abcd-pattern.svg);
   background-size: cover;
@@ -2066,7 +2066,7 @@ body.dark #navigation nav a:hover {
   #footer {
     padding: 30px 15px !important;
     grid-gap: 30px;
-        grid-template-areas: "contact	contact	contact" "borderline	borderline	borderline" "payments	payments	payments" "legal	legal	legal" "social	social	social" "copyright	copyright	copyright";
+        grid-template-areas: "contact	contact	contact" "borderline	borderline	borderline" "payments	payments	payments" "legal	legal	legal" "social	social	social" "copyright	copyright	copyright";
   }
   #footer .contact, #footer .payments, #footer .border-line, #footer .legal, #footer .copyright, #footer .social {
     -ms-grid-column-align: center;

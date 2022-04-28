@@ -22,6 +22,29 @@ function changeValue(val) {
 // Ends here
 
 
+//------------------------------------------------------------------------
+//                      SHOW NAVIGATION ON SCROLL DOWN
+//------------------------------------------------------------------------
+
+// var $window = $(window);
+// $window.on('scroll', function () {
+//     var $body = $('body');
+//     var $header = $('#header');
+//     var $height = $header.outerHeight();
+//     var $scrollTop = $window.scrollTop();
+//     if ($scrollTop > $height * 2) {
+//         $header.addClass('show-on-scroll');
+//     } else {
+//         $header.removeClass('show-on-scroll');
+//         $body.css({
+//             'padding-top': "0px"
+//         });
+//     }
+//     $body.css({
+//         'padding-top': $height + "px"
+//     });
+
+// });
 
 
 //FOR THE ADD TO CART POPUP

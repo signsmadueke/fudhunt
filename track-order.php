@@ -19,10 +19,10 @@
 <body id="track-order-page" class="container bg-offwhite with-bottom-menu">
 	<section id="header" class="constrain header-white">
 		<div class="navigation">
-            <a href="orders" class="back">
-                <img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
-            </a>
-        </div>	
+			<a href="#" onclick="history.back()" class="back link">
+				<img class="svg" src="assets/images/icons/arrow-left.svg" height="5px" alt="Go back">
+			</a>
+		</div>
 		<div class="text">
 			<h1 class="name">Track Order</h1>
 		</div>
@@ -49,7 +49,7 @@
 						<p class="items">
 							4 Item
 						</p>
-						<p class="status waiting">Waiting</p>
+						<p class="status dispatched">Dispatched</p>
 					</div>
 				</div>
 
@@ -95,13 +95,13 @@
 
 						<div class="timeline inactive">
 							<div class="icon"></div>
-							<h5>Shipping</h5>
+							<h5>Arriving to destination</h5>
 							<h5 class="time">12:35 PM</h5>
 						</div>
 
 						<div class="timeline end">
 							<div class="icon"></div>
-							<h5>Delivery to your address</h5>
+							<h5>Order Delivered</h5>
 							<h5 class="time">1:25 PM</h5>
 						</div>
 					</div>
@@ -184,11 +184,11 @@
 				<span>Trending</span>
 			</a>
 
-			<a href="cart" style="padding: 15px;" class="link link-secondary active">
+			<a href="cart" style="padding: 15px;" class="link link-secondary">
 				<img class="svg" src="assets/images/icons/menu/cart.svg" height="20px" width="20px" alt="Cart">
 			</a>
 
-			<a href="orders" style="padding: 20px 10px;" class="link link-secondary">
+			<a href="orders" style="padding: 20px 10px;" class="link link-secondary active">
 				<img class="svg" src="assets/images/icons/menu/orders.svg" height="20px" alt="Orders">
 				<span>Orders</span>
 			</a>
@@ -214,22 +214,22 @@
 		var btn = document.getElementsByClassName("add-to-cart");
 		var span = document.getElementsByClassName("close")[0];
 
-		$(".add-to-cart").click(function () {
+		$(".add-to-cart").click(function() {
 			var $modal = $('#track-order-popup');
 			$modal.addClass('active');
 		});
 
-		$(".close-popup").click(function () {
+		$(".close-popup").click(function() {
 			var $modal = $('#track-order-popup');
 			$modal.toggleClass('active');
 		});
 
-		window.onclick = function (event) {
+		window.onclick = function(event) {
 			if (event.target == modal) {
 				var $modal = $('#track-order-popup');
 				$modal.removeClass('active');
 			}
-		
+
 			var div = $(".racing-stars");
 			var radiosBtns = div.find("input[type='radio']");
 			if ($radiosBtns.is(':checked')) {
@@ -237,7 +237,6 @@
 				$popupcontent.addClass('rated');
 			}
 		}
-
 	</script>
 </body>
 
