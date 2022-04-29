@@ -1,21 +1,25 @@
 
 <?php
 
-function sanitize($input) {
+function sanitize($input)
+{
     return htmlentities(htmlspecialchars(strip_tags(trim($input))));
 }
 
-function redirect($url) {
+function redirect($url)
+{
     header("Location: " . $url);
 }
 
-function blockCRS($user, $url) {
+function blockCRS($user, $url)
+{
     if (!isset($user)) {
         redirect($url);
     }
 }
 
-function executeQuery($query) {
+function executeQuery($query)
+{
     global $link;
 
     $fQuery = $query;
@@ -28,7 +32,8 @@ function executeQuery($query) {
     }
 }
 
-function validateQuery($query) {
+function validateQuery($query)
+{
     global $link;
 
     $fExecute = mysqli_query($link, $query);
@@ -39,7 +44,8 @@ function validateQuery($query) {
     }
 }
 
-function checkDuplicate($table, $data, $incoming_data) {
+function checkDuplicate($table, $data, $incoming_data)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $data = '$incoming_data'";
@@ -52,7 +58,8 @@ function checkDuplicate($table, $data, $incoming_data) {
     }
 }
 
-function checkCartDuplicate($table, $data, $incoming_data, $data2, $incoming_data2) {
+function checkCartDuplicate($table, $data, $incoming_data, $data2, $incoming_data2)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $data = '$incoming_data' AND $data2 = '$incoming_data2'";
@@ -65,12 +72,14 @@ function checkCartDuplicate($table, $data, $incoming_data, $data2, $incoming_dat
     }
 }
 
-function encrypt($data) {
+function encrypt($data)
+{
     $data = sha1(md5($data));
     return $data . "fudhunt";
 }
 
-function decrypt($oldData, $newData) {
+function decrypt($oldData, $newData)
+{
     $newData = sha1(md5($newData));
     $newData = $newData . "fudhunt";
 
@@ -81,7 +90,8 @@ function decrypt($oldData, $newData) {
     }
 }
 
-function getAll($table) {
+function getAll($table)
+{
     global $link;
 
     $query = "SELECT * FROM $table ORDER BY id DESC";
@@ -94,7 +104,8 @@ function getAll($table) {
     }
 }
 
-function getAllDesc($table) {
+function getAllDesc($table)
+{
     global $link;
 
     $query = "SELECT * FROM $table ORDER BY id DESC";
@@ -107,7 +118,8 @@ function getAllDesc($table) {
     }
 }
 
-function getAllLimit($table, $limit) {
+function getAllLimit($table, $limit)
+{
     global $link;
 
     $query = "SELECT * FROM $table ORDER BY id DESC LIMIT $limit";
@@ -120,7 +132,8 @@ function getAllLimit($table, $limit) {
     }
 }
 
-function getWhereLimit($table, $col, $data, $limit) {
+function getWhereLimit($table, $col, $data, $limit)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $col = '$data' ORDER BY id DESC LIMIT $limit";
@@ -133,7 +146,8 @@ function getWhereLimit($table, $col, $data, $limit) {
     }
 }
 
-function getTotalNum($table) {
+function getTotalNum($table)
+{
     global $link;
 
     $query = "SELECT * FROM $table";
@@ -146,7 +160,8 @@ function getTotalNum($table) {
     }
 }
 
-function getTotalNumWhere($table, $col, $data) {
+function getTotalNumWhere($table, $col, $data)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $col = '$data'";
@@ -159,7 +174,8 @@ function getTotalNumWhere($table, $col, $data) {
     }
 }
 
-function getWhere($table, $col, $data) {
+function getWhere($table, $col, $data)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $col = '$data'";
@@ -172,7 +188,8 @@ function getWhere($table, $col, $data) {
     }
 }
 
-function getCart($table, $col, $data) {
+function getCart($table, $col, $data)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $col = '$data' AND status = 1";
@@ -185,7 +202,8 @@ function getCart($table, $col, $data) {
     }
 }
 
-function getCartTotal($table, $col, $data) {
+function getCartTotal($table, $col, $data)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $col = '$data' AND status = 1";
@@ -198,7 +216,8 @@ function getCartTotal($table, $col, $data) {
     }
 }
 
-function getPlaced($table, $col, $data) {
+function getPlaced($table, $col, $data)
+{
     global $link;
 
     $query = "SELECT * FROM $table WHERE $col = '$data' AND status = 0";
@@ -211,7 +230,8 @@ function getPlaced($table, $col, $data) {
     }
 }
 
-function sendMail($to, $username, $email) {
+function sendMail($to, $username, $email)
+{
     $to = $to;
     $subject = "Logged In";
 
@@ -231,7 +251,7 @@ function sendMail($to, $username, $email) {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <hello@zero.com>' . "\r\n";
+    $headers .= 'From: <hello@fudhunt.com>' . "\r\n";
 
-    mail($to,$subject,$message,$headers);
+    mail($to, $subject, $message, $headers);
 }

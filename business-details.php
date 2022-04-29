@@ -4,9 +4,6 @@ if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$result = fetch_user($user_id);
 	extract($result);
-
-	// var_dump($result); 
-
 }
 
 
@@ -302,11 +299,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">Hands down the best brunch spot in Cole Valley! The first time I came here was actually because the wait at Zazie was too long (~2hrs), while there was no wait here. I''m just so glad I gave this place a shot because I enjoyed the food at Padrecito so much more.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -324,11 +316,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">Good vibes here! The food was delicious, but not everything was to amazing. Top favorite things here was the guacamole, pork belly tacos, ceviche and the quesabirria, they all had amazing flavor and would definitely go back for these!</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -346,11 +333,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">Love Padrecito - have been here many times for brunch and dinner. <br>Food: The food is amazing I''ve had almost everything on the menu and nothing has disappointed so far. I went for my birthday recently and had the fish tacos - fish was nice and crispy on the outside and soft on the inside. The ceviches are AMAZING and quessabirria is sooo savory, hearty, and flavorful.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -368,11 +350,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">The coffee was quite nice and the food was very tasty with generous portion sizes. Service was very good and our hostess checked on us from time to time to make sure we had everything we need. Great place for brunch!</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -390,11 +367,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">Came to the Haight area for brunch but all the restaurants around us were packed and seem to had long wait times. Padrecito came through with the last minute seating and delicious brunch options for all of us.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -412,11 +384,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">This restaurant was doing brisk business on an early Wednesday evening. We ordered the Braised Pork Belly Tacos which were very flavorful and beautifully presented;<br>the reliable guacamole w/ chips &amp; salsa; Enchiladas De Res; <br>and the Arctic Char Tacos.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -434,11 +401,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">I haven''t been to Padrecito in awhile, but it''s one of my favorite brunch spots.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -456,11 +418,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">I adore their guacamole. <br><br>It is easily one of my favorite foods.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -478,11 +435,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">Solid neighborhood Mexican spot with great drink options. The place is spacious, with a big bar area- so great for groups as well.</p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 
@@ -500,11 +452,6 @@ if (isset($_GET['restaurant_id'])) {
 					<div class="stars" style="--rating: <?php echo (rand(30, 50) / 10); ?>;" aria-label="Rating of this product is 5 out of 5."></div>
 					<p class="date">Yesterday</p>
 					<p class="note">So good. Was at a place on haight where we waited in line to be seated for around 10 minutes and then were handed menus and ignored for 10 minutes- hopped on Yelp and found padrecito and decided to walk here instead. So worth! We were seated and had drinks and order taken immediately. </p>
-					<!-- <div class="comment-media">
-						<a href="#" class="media"><img src="assets/images/products/16.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/15.jpg" height="70px" alt="Review Media"></a>
-						<a href="#" class="media"><img src="assets/images/products/14.jpg" height="70px" alt="Review Media"></a>
-					</div> -->
 				</div>
 			</div>
 		</div>

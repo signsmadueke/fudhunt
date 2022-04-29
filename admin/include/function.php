@@ -125,6 +125,8 @@ function fetch_cuisine()
 	return false;
 }
 
+
+
 function fetch_food()
 {
 	global $link;
@@ -154,6 +156,7 @@ function fetch_restaurant()
 	}
 	return false;
 }
+
 
 function delete_restaurant($post)
 {

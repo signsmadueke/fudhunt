@@ -1,13 +1,6 @@
 <?php
 require 'include/function4user.php';
-// if (isset($_SESSION['user_id'])) {
-// 	 $user_id = $_SESSION['user_id'];  
-//   $result = fetch_user($user_id);
-//    extract($result);
 
-//  // var_dump($result); 
-
-// }
 
 
 ?>
@@ -75,39 +68,9 @@ require 'include/function4user.php';
 		<?php }
 
 		$p = array_sum($prize);
-		// var_dump($prize);
-		//var_dump($p);
+
 		?>
 
-		<!-- 		<div class="cart-item constrain">
-			<a href="#" class="image">
-				<img src="assets/images/products/22.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-			</a>
-			<div class="details">
-				<a href="#" class="name">Dungeness Crab Arancini</a>
-				<h5 class="price">$8.99</h5>
-				<div class="quantity">
-					<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-					<span class="value">0</span>
-					<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- <div class="cart-item constrain">
-			<a href="#" class="image">
-				<img src="assets/images/products/23.jpg" height="120px" alt="Fried Noodles Salad and Chicken Wings">
-			</a>
-			<div class="details">
-				<a href="#" class="name">Octopus</a>
-				<h5 class="price">$9.99</h5>
-				<div class="quantity">
-					<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-					<span class="value">0</span>
-					<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-				</div>
-			</div>
-		</div> -->
 	</section>
 
 	<section id="cart-totals">

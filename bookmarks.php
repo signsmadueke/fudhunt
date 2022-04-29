@@ -4,9 +4,6 @@ if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$result = fetch_user($user_id);
 	extract($result);
-
-	// var_dump($result); 
-
 }
 ?>
 
@@ -82,55 +79,6 @@ if (isset($_SESSION['user_id'])) {
 	<!-- This is the Foods tab -->
 	<section id="foods" class="tab-content category active">
 		<div class="foods constrain">
-			<!-- <div class="product horizontal bookmarked">
-				<div class="image">
-					<img src="assets/images/products/3.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-				</div>
-
-				<div class="details">
-
-					<div class="name">
-						<h5>Margherita Burrata</h5>
-					</div>
-
-					<button class="btn bookmark">
-						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-					</button>
-
-					<h5 class="price">$1,300</h5>
-					<div class="quantity">
-						<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-						<span class="value">0</span>
-						<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="product horizontal bookmarked">
-				<div class="image">
-					<img src="assets/images/products/4.jpg" height="120px" alt="Fried Noodles and Chicken Wings">
-				</div>
-
-				<div class="details">
-
-					<div class="name">
-						<h5>Burrata Pizza</h5>
-					</div>
-
-					<button class="btn bookmark">
-						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-					</button>
-
-					<h5 class="price">$1,300</h5>
-					<div class="quantity">
-						<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-						<span class="value">0</span>
-						<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-					</div>
-
-				</div>
-			</div> -->
 
 			<?php
 			$response = fetch_food();
@@ -138,7 +86,7 @@ if (isset($_SESSION['user_id'])) {
 			if ($response) {
 				foreach ($response as $row) {
 					extract($row)
-					//$depature_date = $row['depature_date'];
+
 			?>
 
 					<div class="product horizontal bookmarked">
@@ -175,61 +123,7 @@ if (isset($_SESSION['user_id'])) {
 	<!-- This is the Restaurants tab -->
 	<section id="restaurants" class="tab-content category">
 		<div class="businesses constrain">
-			<!-- <div class="business bookmarked">
-				<a href="business-details" class="image">
-					<img src="assets/images/restaurants/kichi.png" height="85px" alt="kichi">
-				</a>
-				<div class="details">
-					<a href="business-details" class="name">
-						<h5>Kichi Coffee</h5>
-					</a>
-					<button class="btn bookmark">
-						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-					</button>
-					<p class="address">
-						<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
-						<span>76A Gwarimpa Estate, Abuja</span>
-					</p>
-					
-					<div class="bottom">
-						<p class="reviews">
-							<img class="svg icon" alt="" src="assets/images/icons/star.svg">
-							<b>4.5</b>
-							<span>(1256)</span>
-						</p>
 
-						
-					</div>
-				</div>
-			</div>
-
-			<div class="business bookmarked">
-				<a href="business-details" class="image">
-					<img src="assets/images/restaurants/kichi.png" height="85px" alt="kichi">
-				</a>
-				<div class="details">
-					<a href="business-details" class="name">
-						<h5>Kichi Coffee</h5>
-					</a>
-					<button class="btn bookmark">
-						<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-					</button>
-					<p class="address">
-						<img class="svg" src="assets/images/icons/map-pointer.svg" height="10px" alt="Store">
-						<span>76A Gwarimpa Estate, Abuja</span>
-					</p>
-					
-					<div class="bottom">
-						<p class="reviews">
-							<img class="svg icon" alt="" src="assets/images/icons/star.svg">
-							<b>4.5</b>
-							<span>(1256)</span>
-						</p>
-
-						
-					</div>
-				</div>
-			</div> -->
 
 			<?php
 			$response = fetch_restaurant();
@@ -237,7 +131,7 @@ if (isset($_SESSION['user_id'])) {
 			if ($response) {
 				foreach ($response as $row) {
 					extract($row)
-					//$depature_date = $row['depature_date'];
+
 			?>
 
 					<div class="business bookmarked">

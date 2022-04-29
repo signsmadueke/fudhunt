@@ -1,3 +1,6 @@
+# .Database
+The database filename is fudhunt.sql
+
 # .constrain Class
 The .constrain class helps keep the section of a page and it's contents in minimum width of 1000px and also centers that section of the page so that things don't get too wide if someone tries to open it up on a Cinema tv screen (It's wierd but people do that ;)).
 

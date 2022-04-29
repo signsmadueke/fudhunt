@@ -7,5 +7,3 @@ if (!isset($_SESSION['cart'])) {
 }
 array_push($_SESSION['cart'], $food_id);
 header('Location: ' . $_SERVER['HTTP_REFERER']);
-
-	// var_dump($_SESSION['cart']);

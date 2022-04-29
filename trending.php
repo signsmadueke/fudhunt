@@ -159,7 +159,7 @@ if (isset($_SESSION['user_id'])) {
 			if ($response) {
 				foreach ($response as $row) {
 					extract($row)
-					//$depature_date = $row['depature_date'];
+
 			?>
 
 					<div class="business">

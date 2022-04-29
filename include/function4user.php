@@ -2,11 +2,6 @@
 ob_start();
 session_start();
 
-// define("HOST", "localhost");
-// define("USERNAME", "aplusvgy_escrow2");
-// define("PASSWORD", "aplusvgy_escrow2");
-// define("DBNAME", "aplusvgy_escrow2");
-
 define('HOST', 'localhost:8889');
 define('USER', 'root');
 define('PASSWORD', 'root');
@@ -309,21 +304,21 @@ function register_user($post)
 
         return true;
 
-        // if ($query) {
-        //     $subject = "Welcome";
-        //     require_once 'temp.php';
-        // $response = send_mail($email, $fullname, $subject, $body);
+        if ($query) {
+            $subject = "Welcome";
+            require_once 'temp.php';
+            $response = send_mail($email, $fullname, $subject, $body);
 
-        //     if ($response) {
-        //         return true;
-        //     } else {
-        //         $errors['sendEmail'] = "Ooops!!! Something went wrong. (Email)";
-        //         return $errors;
-        //     }
-        // } else {
-        //     $errors['database'] = "Could not insert into database " . mysqli_error($link);
-        //     return $errors;
-        // }
+            if ($response) {
+                return true;
+            } else {
+                $errors['sendEmail'] = "Ooops!!! Something went wrong. (Email)";
+                return $errors;
+            }
+        } else {
+            $errors['database'] = "Could not insert into database " . mysqli_error($link);
+            return $errors;
+        }
     }
     return $errors;
 

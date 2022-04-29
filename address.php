@@ -56,7 +56,7 @@ if (isset($_SESSION['user_id'])) {
 			if ($response) {
 				foreach ($response as $row) {
 					extract($row)
-					//$depature_date = $row['depature_date'];
+
 			?>
 					<div class="address">
 						<div class="details">
@@ -82,28 +82,6 @@ if (isset($_SESSION['user_id'])) {
 			<?php }
 			} ?>
 
-			<!-- This is an address -->
-			<!-- <div class="address">
-				<div class="details">
-					<h5>Work</h5>
-					<h5 class="location-address">
-						<img class="svg" src="assets/images/icons/map-pointer.svg" height="9px" alt="Store">
-						<span>23 White Boulevard</span>
-					</h5>
-					<p class="name">
-						<img class="svg" src="assets/images/icons/person.svg" height="9px" alt="Store">
-						<span>Signs Madueke</span>
-					</p>
-					<p class="phone">
-						<img class="svg" src="assets/images/icons/telephone.svg" height="9px" alt="Store">
-						<span>+234 907 151 0046</span>
-					</p>
-				</div>
-				<label class="radio">
-					<input name="address" type="radio">
-					<span class="check"></span>
-				</label>
-			</div> -->
 
 			<!-- This is the button that adds a new address -->
 			<a href="add-new-address" class="btn">Add new Address</a>

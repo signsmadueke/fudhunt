@@ -4,9 +4,6 @@ if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 	$result = fetch_user($user_id);
 	extract($result);
-
-	// var_dump($result); 
-
 }
 
 
@@ -63,7 +60,7 @@ if (isset($_SESSION['user_id'])) {
 			if ($response) {
 				foreach ($response as $row) {
 					extract($row)
-					//$depature_date = $row['depature_date'];
+
 			?>
 					<div class="address">
 						<div class="details">
@@ -125,7 +122,7 @@ if (isset($_SESSION['user_id'])) {
 				?>
 					<div class="cart-item">
 						<div class="image">
-							<img src="admin/<?php echo $food_pix; ?>" height="100px" alt="Restaurant Image">
+							<img src="<?php echo $food_pix; ?>" height="100px" alt="Restaurant Image">
 						</div>
 						<div class="details">
 							<h5 class="name"><?php echo $food_name; ?></h5>
@@ -138,26 +135,6 @@ if (isset($_SESSION['user_id'])) {
 
 
 				?>
-
-				<!-- <div class="cart-item">
-					<div class="image">
-						<img src="assets/images/products/22.jpg" height="100px" alt="Restaurant Image">
-					</div>
-					<div class="details">
-						<h5 class="name">Dungeness Crab Arancini</h4>
-						<p class="product">$8.99</p>
-					</div>
-				</div> -->
-
-				<!-- <div class="cart-item">
-					<div class="image">
-						<img src="assets/images/products/23.jpg" height="100px" alt="Restaurant Image">
-					</div>
-					<div class="details">
-						<h5 class="name">Octopus</h5>
-						<p class="product">$9.99</p>
-					</div>
-				</div> -->
 
 			</div>
 		</section>
