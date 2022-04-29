@@ -59,7 +59,7 @@ require 'include/function4user.php';
 
 			<div class="cart-item constrain">
 				<a href="#" class="image">
-					<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="">
+					<img src="<?php echo $food_pix; ?>" height="120px" alt="">
 				</a>
 				<div class="details">
 					<a href="#" class="name"><?php echo $food_name; ?></a>

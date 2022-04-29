@@ -143,7 +143,7 @@ if (isset($_SESSION['user_id'])) {
 
 					<div class="product horizontal bookmarked">
 						<a href="#" class="image">
-							<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="#">
+							<img src="<?php echo $food_pix; ?>" height="120px" alt="#">
 						</a>
 
 						<div class="details">
@@ -242,7 +242,7 @@ if (isset($_SESSION['user_id'])) {
 
 					<div class="business bookmarked">
 						<a href="business-details.php?restaurant_id=<?php echo $restaurant_id; ?>" class="image">
-							<img src="admin/<?php echo $restaurant_pix; ?>" height="85px" alt="kichi">
+							<img src="<?php echo $restaurant_pix; ?>" height="85px" alt="kichi">
 						</a>
 						<div class="details">
 							<a href="business-details" class="name">

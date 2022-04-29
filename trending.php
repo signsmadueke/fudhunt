@@ -94,7 +94,7 @@ if (isset($_SESSION['user_id'])) {
 
 					<div class="product horizontal">
 						<a href="#" class="image">
-							<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="#">
+							<img src="<?php echo $food_pix; ?>" height="120px" alt="#">
 						</a>
 
 						<div class="details">
@@ -164,7 +164,7 @@ if (isset($_SESSION['user_id'])) {
 
 					<div class="business">
 						<a href="business-details.php?restaurant_id=<?php echo $restaurant_id; ?>" class="image">
-							<img src="admin/<?php echo $restaurant_pix; ?>" height="85px" alt="kichi">
+							<img src="<?php echo $restaurant_pix; ?>" height="85px" alt="kichi">
 						</a>
 						<div class="details">
 							<a href="business-details" class="name">
@@ -242,7 +242,7 @@ if (isset($_SESSION['user_id'])) {
 						<div class="cuisine">
 							<a href="cuisine.php?cuisine_id=<?php echo $cuisine_id; ?>" class="details">
 								<div class="image">
-									<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="All">
+									<img src="<?php echo $cuisine_pix; ?>" height="50px" alt="All">
 								</div>
 								<h5 class="name"><?php echo $cuisine_name; ?></h5>
 							</a>

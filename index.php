@@ -245,9 +245,9 @@ require_once 'include/header.php';
 
 
 					<div class="cuisine">
-						<a href="#" class="details">
+						<a href="cuisine.php?cuisine_id=<?php echo $cuisine_id; ?>" class="details">
 							<div class="image">
-								<img src="admin/<?php echo $cuisine_pix; ?>" height="50px" alt="Chad">
+								<img src="<?php echo $cuisine_pix; ?>" height="50px" alt="Chad">
 							</div>
 							<h5 class="name"><?php echo $cuisine_name; ?></h5>
 						</a>
@@ -255,87 +255,6 @@ require_once 'include/header.php';
 
 			<?php }
 			} ?>
-			<!-- 
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/japanese.jpeg" height="50px" alt="Japanese">
-					</div>
-					<h5 class="name">Japanese</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/indian.jpeg" height="50px" alt="Indian">
-					</div>
-					<h5 class="name">Indian</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/vietnamese.jpeg" height="50px" alt="Vietnamese">
-					</div>
-					<h5 class="name">Vietnamese</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/south-korean.jpeg" height="50px" alt="South Korean">
-					</div>
-					<h5 class="name">South Korean</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/israeli.jpeg" height="50px" alt="Israeli">
-					</div>
-					<h5 class="name">Israeli</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/greek.jpeg" height="50px" alt="Greek">
-					</div>
-					<h5 class="name">Greek</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/swedish.jpeg" height="50px" alt="Swedish">
-					</div>
-					<h5 class="name">Swedish</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/thai.jpeg" height="50px" alt="Thai">
-					</div>
-					<h5 class="name">Thai</h5>
-				</a>
-			</div>
-
-			<div class="cuisine">
-				<a href="#" class="details">
-					<div class="image">
-						<img src="assets/images/cuisines/spanish.jpeg" height="50px" alt="Spanish">
-					</div>
-					<h5 class="name">Spanish</h5>
-				</a>
-			</div> -->
 		</div>
 	</section>
 
@@ -360,15 +279,12 @@ require_once 'include/header.php';
 			if ($response) {
 				foreach ($response as $row) {
 					extract($row);
-
-					// var_dump($row);
-
 			?>
 
 					<div class="sale bookmarked">
 						<div class="details">
 							<a href="#" class="image">
-								<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
+								<img src="<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
 								<button type="button" class="btn bookmark">
 									<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 								</button>
@@ -379,10 +295,10 @@ require_once 'include/header.php';
 									<span class="price">$<?php echo $food_prize; ?></span>
 								<div class="quantity">
 
-									<a href="removecart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
+									<a href="removecart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="minus-<?php echo $food_id; ?> btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
 									</a>
-									<span class="value">0</span>
-									<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
+									<span class="value-<?php echo $food_id; ?>">0</span>
+									<a href="addcart.php?food_id=<?php echo $food_id; ?>"><button type="button" class="plus-<?php echo $food_id; ?> btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
 									</a>
 								</div>
 								</p>
@@ -392,117 +308,6 @@ require_once 'include/header.php';
 
 			<?php }
 			} ?>
-
-			<!-- 			<div class="sale">
-				<div class="details">
-					<a href="#" class="image">
-						<img src="assets/images/products/8.jpg" height="120px" alt="Fried Noodles and Chicken">
-						<button type="button" class="btn bookmark">
-							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-						</button>
-					</a>
-					<div class="text">
-						<a href="#" class="name">Margherita Burrata</a>
-						<p>
-							<span class="price">$6.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="sale bookmarked">
-				<div class="details">
-					<a href="#" class="image">
-						<img src="assets/images/products/9.jpg" height="120px" alt="Fried Noodles and Chicken">
-						<button type="button" class="btn bookmark">
-							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-						</button>
-					</a>
-					<div class="text">
-						<a href="#" class="name">Burrata Pizza</a>
-						<p>
-							<span class="price">$7.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="sale bookmarked">
-				<div class="details">
-					<a href="#" class="image">
-						<img src="assets/images/products/10.jpg" height="120px" alt="Fried Noodles and Chicken">
-						<button type="button" class="btn bookmark">
-							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-						</button>
-					</a>
-					<div class="text">
-						<a href="#" class="name">Squid Ink Risotto</a>
-						<p>
-							<span class="price">$9.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="sale">
-				<div class="details">
-					<a href="#" class="image">
-						<img src="assets/images/products/11.jpg" height="120px" alt="Fried Noodles and Chicken">
-						<button type="button" class="btn bookmark">
-							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-						</button>
-					</a>
-					<div class="text">
-						<a href="#" class="name">Funghi Misti Pizza</a>
-						<p>
-							<span class="price">$4.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="sale bookmarked">
-				<div class="details">
-					<a href="#" class="image">
-						<img src="assets/images/products/12.jpg" height="120px" alt="Fried Noodles and Chicken">
-						<button type="button" class="btn bookmark">
-							<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
-						</button>
-					</a>
-					<div class="text">
-						<a href="#" class="name">Chicken Parm Pasta</a>
-						<p>
-							<span class="price">$3.99</span>
-							<div class="quantity">
-								<button type="button" class="minus btn"><img class="svg icon" alt="" src="assets/images/icons/minus.svg" height="30px"></button>
-								<span class="value">0</span>
-								<button type="button" class="plus btn"><img class="svg icon" alt="" src="assets/images/icons/plus.svg" height="30px"></button>
-							</div>
-						</p>
-					</div>
-				</div>
-			</div> -->
-
 		</div>
 	</section>
 

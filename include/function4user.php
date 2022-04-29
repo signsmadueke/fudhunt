@@ -163,7 +163,7 @@ function sendMail($to, $username, $email)
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <hello@zero.com>' . "\r\n";
+    $headers .= 'From: <hello@fudhunt.com>' . "\r\n";
 
     mail($to, $subject, $message, $headers);
 }
@@ -309,21 +309,21 @@ function register_user($post)
 
         return true;
 
-        if ($query) {
-            $subject = "Welcome to Escrow";
-            require_once 'temp.php';
-            $response = send_mail($email, $fullname, $subject, $body);
+        // if ($query) {
+        //     $subject = "Welcome";
+        //     require_once 'temp.php';
+        // $response = send_mail($email, $fullname, $subject, $body);
 
-            if ($response) {
-                return true;
-            } else {
-                $errors['sendEmail'] = "Ooops!!! Something went wrong. (Email)";
-                return $errors;
-            }
-        } else {
-            $errors['database'] = "Could not insert into database " . mysqli_error($link);
-            return $errors;
-        }
+        //     if ($response) {
+        //         return true;
+        //     } else {
+        //         $errors['sendEmail'] = "Ooops!!! Something went wrong. (Email)";
+        //         return $errors;
+        //     }
+        // } else {
+        //     $errors['database'] = "Could not insert into database " . mysqli_error($link);
+        //     return $errors;
+        // }
     }
     return $errors;
 
@@ -361,9 +361,7 @@ function login_user($post)
         $errors['password'] = "Please enter your password";
     }
 
-
     if ($err_flag === false) {
-
         if (verify_password($email, $password)) {
             return true;
         } else {
@@ -371,6 +369,7 @@ function login_user($post)
             return $errors;
         }
     }
+
     return $errors;
 }
 
@@ -420,36 +419,6 @@ function fetch_restaurant_food($restaurant_id)
     return false;
 }
 
-function fetch_restaurant_food_ten($restaurant_id)
-{
-    global $link;
-    $sql = "SELECT * FROM food WHERE restaurant_id = '$restaurant_id' ORDER BY RAND()";
-    $query = mysqli_query($link, $sql);
-    $posts = [];
-    if (mysqli_num_rows($query) > 0) {
-        while ($row = mysqli_fetch_assoc($query)) {
-            $posts[] = $row;
-        }
-        return $posts;
-    }
-    return false;
-}
-
-function fetch_restaurant_review($review_id)
-{
-    global $link;
-    $sql = "SELECT * FROM food WHERE review_id = '$review_id' ORDER BY RAND()";
-    $query = mysqli_query($link, $sql);
-    $posts = [];
-    if (mysqli_num_rows($query) > 0) {
-        while ($row = mysqli_fetch_assoc($query)) {
-            $posts[] = $row;
-        }
-        return $posts;
-    }
-    return false;
-}
-
 function fetch_single_restaurant($restaurant_id)
 {
     global $link;
@@ -459,31 +428,13 @@ function fetch_single_restaurant($restaurant_id)
     return $row;
 }
 
-function fetch_single_restaurant_ten($restaurant_id)
-{
-    global $link;
-    $sql = "SELECT * FROM restaurant WHERE restaurant_id= '$restaurant_id' ORDER BY RAND()";
-    $query = mysqli_query($link, $sql);
-    $row = mysqli_fetch_assoc($query);
-    return $row;
-}
-
-function fetch_single_review($review_id)
-{
-    global $link;
-    $sql = "SELECT * FROM review WHERE review_id= '$review_id' ORDER BY RAND()";
-    $query = mysqli_query($link, $sql);
-    $row = mysqli_fetch_assoc($query);
-    return $row;
-}
-
-
-
 
 function fetch_user($user_id)
 {
     global $link;
-    $sql = "SELECT users.*, location.* FROM users INNER JOIN location ON users.user_id = location.user_id WHERE users.user_id = '$user_id' AND location.location_status = 'active'";
+    $sql = "SELECT users.*, location.* FROM users
+    INNER JOIN location ON users.user_id = location.user_id
+    WHERE users.user_id = '$user_id' AND location.location_status = 'active'";
     $query = mysqli_query($link, $sql);
     $row = mysqli_fetch_assoc($query);
     return $row;
@@ -499,12 +450,10 @@ function fetch_single_cuisine($cuisine_id)
 }
 
 
-
 function fetch_cuisine()
 {
     global $link;
-    $sql = "SELECT * FROM cuisine
-    ORDER BY RAND()";
+    $sql = "SELECT * FROM cuisine ORDER BY RAND()";
     $query = mysqli_query($link, $sql);
     $posts = [];
     if (mysqli_num_rows($query) > 0) {
@@ -519,8 +468,7 @@ function fetch_cuisine()
 function fetch_restaurant()
 {
     global $link;
-    $sql = "SELECT * FROM restaurant
-    ORDER BY RAND()";
+    $sql = "SELECT * FROM restaurant ORDER BY RAND()";
     $query = mysqli_query($link, $sql);
     $posts = [];
     if (mysqli_num_rows($query) > 0) {
@@ -536,9 +484,7 @@ function fetch_restaurant()
 function fetch_food()
 {
     global $link;
-    $sql = "SELECT * FROM food
-    ORDER BY RAND()
-    LIMIT 30";
+    $sql = "SELECT * FROM food ORDER BY RAND()  LIMIT 30";
     $query = mysqli_query($link, $sql);
     $posts = [];
     if (mysqli_num_rows($query) > 0) {
@@ -549,7 +495,6 @@ function fetch_food()
     }
     return false;
 }
-
 
 
 function checkout($post, $products)
@@ -587,14 +532,70 @@ function checkout($post, $products)
         $errors['delivery_note'] = "Please enter your delivery_note";
     }
 
-
-
     if ($err_flag === false) {
-        $sql = "INSERT INTO order_list (user_id, total_price, products, delivery_address, delivery_note, delivery_status) VALUES ('$user_id', '$total_prize', '$products', '$delivery_address', '$delivery_note', 'pending')";
-
+        $sql = "INSERT INTO order_list (user_id, total_price, products, delivery_address, delivery_note, delivery_status)
+        VALUES ('$user_id', '$total_prize', '$products', '$delivery_address', '$delivery_note', 'pending')";
         $query = validateQuery($sql);
         return true;
     }
 
     return $errors;
+}
+
+
+
+
+
+
+
+
+
+
+
+function fetch_restaurant_food_ten($restaurant_id)
+{
+    global $link;
+    $sql = "SELECT * FROM food WHERE restaurant_id = '$restaurant_id' ORDER BY RAND()";
+    $query = mysqli_query($link, $sql);
+    $posts = [];
+    if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+            $posts[] = $row;
+        }
+        return $posts;
+    }
+    return false;
+}
+
+function fetch_restaurant_review($review_id)
+{
+    global $link;
+    $sql = "SELECT * FROM food WHERE review_id = '$review_id' ORDER BY RAND()";
+    $query = mysqli_query($link, $sql);
+    $posts = [];
+    if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+            $posts[] = $row;
+        }
+        return $posts;
+    }
+    return false;
+}
+
+function fetch_single_restaurant_ten($restaurant_id)
+{
+    global $link;
+    $sql = "SELECT * FROM restaurant WHERE restaurant_id= '$restaurant_id' ORDER BY RAND()";
+    $query = mysqli_query($link, $sql);
+    $row = mysqli_fetch_assoc($query);
+    return $row;
+}
+
+function fetch_single_review($review_id)
+{
+    global $link;
+    $sql = "SELECT * FROM review WHERE review_id= '$review_id' ORDER BY RAND()";
+    $query = mysqli_query($link, $sql);
+    $row = mysqli_fetch_assoc($query);
+    return $row;
 }

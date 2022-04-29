@@ -57,7 +57,7 @@ if (isset($_GET['restaurant_id'])) {
 <body id="business-details-page" class="bg-offwhite container with-bottom-menu bookmarked">
 
 	<!-- So this <section id="header"> has a backgroud image, I don't know if it's meant to be dynamic but I've left a link to the image in the inline style of the section.  -->
-	<section id="header" class="header-transparent-image header-with-tab" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, rgba(34, 43, 69, 0.9), rgba(34, 43, 69, 0.9)), url(admin/<?php echo $restaurant_pix; ?>);">
+	<section id="header" class="header-transparent-image header-with-tab" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, rgba(34, 43, 69, 0.9), rgba(34, 43, 69, 0.9)), url(<?php echo $restaurant_pix; ?>);">
 
 
 		<div class="header-actions constrain">
@@ -150,7 +150,7 @@ if (isset($_GET['restaurant_id'])) {
 						<div class="product vertical bookmarked">
 							<div class="details">
 								<div class="image">
-									<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
+									<img src="<?php echo $food_pix; ?>" height="120px" alt="<?php echo $food_name; ?>">
 									<button class="btn bookmark">
 										<img class="svg" src="assets/images/icons/bookmark.svg" height="18px" alt="Bookmark">
 									</button>
@@ -192,7 +192,7 @@ if (isset($_GET['restaurant_id'])) {
 				?>
 						<div class="product constrain horizontal">
 							<a href="#" class="image">
-								<img src="admin/<?php echo $food_pix; ?>" height="120px" alt="#">
+								<img src="<?php echo $food_pix; ?>" height="120px" alt="#">
 							</a>
 
 							<div class="details">

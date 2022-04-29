@@ -106,7 +106,7 @@ if (isset($_SESSION['user_id'])) {
 			?>
 				<div class="cart-item">
 					<div class="image">
-						<img src="admin/<?php echo $food_pix; ?>" height="100px" alt="Restaurant Image">
+						<img src="<?php echo $food_pix; ?>" height="100px" alt="Restaurant Image">
 					</div>
 					<div class="details">
 						<h5 class="name"><?php echo $food_name; ?></h5>
